@@ -1,9 +1,7 @@
 
-
-
 /* main div */
 .notes {   
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100vw;
     height: 100vh;
 }      /*  end */
@@ -32,6 +30,8 @@
     margin-left: 38.8px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: rgb(70, 209, 255);
+    /* background-color: $blue-500; */
 }   /*  end */
 
    /* header in right   */
@@ -55,6 +55,7 @@ header {
     margin-top: 2px;
     border-radius: 7px;
     border: white;
+    background-color: transparent;
 }    /*  end */
 
   /* notes in right div in notes 1 */
@@ -66,6 +67,7 @@ header {
     border-radius: 7px;
     width: 90%;
     border: white;
+    background-color: transparent;
 }   /*  end */
 
 ::placeholder {     
@@ -80,6 +82,7 @@ header {
     margin-top: 2px;
     border-radius: 7px;
     border: white;
+    background-color: transparent;
 }    /*  end */
 
 /* descri of Task 2  */
@@ -90,6 +93,7 @@ header {
     border-radius: 7px;
     width: 90%;
     border: white;
+    background-color: transparent;
 }     /*  end */
 
 /* button for settigns  */
@@ -102,6 +106,7 @@ header {
     border: none;
     background-color: white;
     cursor: pointer;
+    background-color: transparent;
 }     /* end */
 
 /* for some css to settings icon */
@@ -186,6 +191,7 @@ header {
     border: none;
     background-color: white;
     cursor: pointer;
+    background-color: transparent;
 }     /* end */
 
 /* footer side */
@@ -194,7 +200,7 @@ header {
     margin: 0px 3px;
     border-radius: 7px;
     position: absolute;
-    top: 592px;
+    top: 590px;
     width: 98%
 }    /*  end */
 
@@ -249,7 +255,7 @@ header {
         font-size: 28px;
     }
     .footer{
-        top: 94%;
+        top: 478px;
     }
     #text{
         width: 89%;
