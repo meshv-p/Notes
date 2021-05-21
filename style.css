@@ -149,7 +149,6 @@ header {
     height: 27px;
     border-radius: 10px;
     border: white;
-    /* background: #000; */
     color: white;
     position: relative;
     top: 3px;
@@ -162,12 +161,27 @@ header {
  /* div for setting bar */
 .op {
     border: 1px solid black;
-    margin: 0px 7px;
+    margin: 0px 17px;
     border-top: white;
     border-radius: 5px;
     height: 28px;
     display: none;
+    width: 460px;
+    animation:backInDown  0.8s 1;
 }   /*  end */
+/* 
+@keyframes option {
+    
+    from{
+        width: 19px;
+        margin:0px  245px;
+        opacity: 0.2;
+        animation: backInDown;
+    }
+   
+
+    
+} */
 
 
 /* new */
@@ -255,7 +269,7 @@ header {
         font-size: 28px;
     }
     .footer{
-        top: 94%;
+        top: 93%;
     }
     #text{
         width: 89%;
