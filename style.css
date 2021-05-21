@@ -1,0 +1,257 @@
+
+
+
+/* main div */
+.notes {   
+    border: 2px solid red;
+    width: 100vw;
+    height: 100vh;
+}      /*  end */
+
+/* left div */
+
+.left {
+    display: inline-block;
+    width: 100px;
+    margin-left: 212px;
+    height: 200px;
+    position: relative;
+    top: 0px;
+    border: 2px solid yellow;
+    margin-top: 75px;
+}   /*  end */
+
+/* right div */
+
+.right {
+    display: inline-block;
+    width: 496px;
+    height: 95vh;
+    position: relative;
+    margin-top: 3px;
+    margin-left: 38.8px;
+    border: 1px solid black;
+    border-radius: 10px;
+}   /*  end */
+
+   /* header in right   */
+header {
+    text-align: center;
+    margin-top: 10px;
+}     /*  end */
+
+/* first note div */
+.note1 {
+    border: 1px solid black;
+    margin: 0px 5px;
+    border-radius: 7px;
+    margin-top: 10px;
+    height: 60px;
+}     /*  end */
+
+  /* task 1 input in right div  ++====  main heading  */
+#t1 {
+    margin-left: 8px;
+    margin-top: 2px;
+    border-radius: 7px;
+    border: white;
+}    /*  end */
+
+  /* notes in right div in notes 1 */
+
+#des {
+    display: block;
+    margin-left: 8px;
+    margin-top: 15px;
+    border-radius: 7px;
+    width: 90%;
+    border: white;
+}   /*  end */
+
+::placeholder {     
+    color: black;
+    opacity: 0.8;
+}      /*  end */
+
+
+ /* for secong task 2 heading  */
+#t2 {
+    margin-left: 10px;
+    margin-top: 2px;
+    border-radius: 7px;
+    border: white;
+}    /*  end */
+
+/* descri of Task 2  */
+#des1 {
+    display: block;
+    margin-left: 10px;
+    margin-top: 15px;
+    border-radius: 7px;
+    width: 90%;
+    border: white;
+}     /*  end */
+
+/* button for settigns  */
+#b1{
+    position: relative;
+    top: -38px;
+    right: -454px;
+    font-size: 23px;
+    width: 27px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}     /* end */
+
+/* for some css to settings icon */
+.fa-cog {
+    font-size: 23px;
+    color: black;
+}    /*  end */
+
+.btnc{                  /*btnc remove class*/
+    border: none;
+    background-color: rgb(27, 54, 211);
+    width: 27px;
+    border-radius: 24px;
+    height: 25px;
+    margin-left: 150px;
+}
+.remove{                        /*   class*/
+    border: none;
+    background-color: rgb(27, 54, 211);
+    width: 27px;
+    border-radius: 24px;
+    height: 25px;
+    margin-left: 52px;
+}
+
+.check {
+    width: 28px;
+    height: 27px;
+    border-radius: 10px;
+    border: white;
+    /* background: #000; */
+    color: white;
+    position: relative;
+    top: 3px;
+    left: -6px;
+    cursor: pointer;
+}
+.tr {
+    width: 28px;
+    height: 27px;
+    border-radius: 10px;
+    border: white;
+    /* background: #000; */
+    color: white;
+    position: relative;
+    top: 3px;
+    left: -6px;
+    cursor: pointer;
+}
+
+
+
+ /* div for setting bar */
+.op {
+    border: 1px solid black;
+    margin: 0px 7px;
+    border-top: white;
+    border-radius: 5px;
+    height: 28px;
+    display: none;
+}   /*  end */
+
+
+/* new */
+
+/* second notes part  */
+.note2 {
+    border: 1px solid black;
+    margin: 0px 5px;
+    margin-top: 10px;
+    height: 60px;
+    border-radius: 7px;
+}   /*  end */
+
+/* button for settigns  */
+#b2{
+    position: relative;
+    top: -38px;
+    right: -454px;
+    font-size: 23px;
+    width: 27px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}     /* end */
+
+/* footer side */
+
+.footer {
+    margin: 0px 3px;
+    border-radius: 7px;
+    position: absolute;
+    top: 592px;
+    width: 98%
+}    /*  end */
+
+/* new notes add */
+#text {
+    width: 92%;
+    height: 23px;
+    border-radius: 7px;
+    border: 1px solid black;
+    outline: none;
+}     /*  end */
+
+/* plus icon for new notes */
+.plus1 {
+    display: inline;
+    height: 26px;
+    width: 28px;
+    
+
+
+}    /*  end */
+
+#plus {
+    border-radius: 14px;
+    border: none;
+    background-color: #000;
+    color: white;
+    font-size: 22px;
+    width: 26px;
+    height: 27px;
+    cursor: pointer;
+}
+
+
+@media (max-width:500px) {
+    .notes{
+        border: none;
+    }
+    .left{
+        display: none;
+    }
+    .right{
+        width: 355px;
+        margin-left: 0px;
+    }
+    #b1{
+        right: -304px;
+        font-size: 28px;
+    }
+    #b2{
+        right: -304px;
+        font-size: 28px;
+    }
+    .footer{
+        top: 478px;
+    }
+    #text{
+        width: 89%;
+    }
+}
