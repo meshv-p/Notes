@@ -39,7 +39,7 @@ header {
     text-align: center;
     margin-top: 10px;
 }     /*  end */
-
+                    /* starting */
 /* first note div */
 .note1 {
     border: 1px solid black;
@@ -214,12 +214,12 @@ header {
     margin: 0px 3px;
     border-radius: 7px;
     position: absolute;
-    top: 590px;
+    top: 94.1%;  /*561  590*/
     width: 98%
 }    /*  end */
 
 /* new notes add */
-#text {
+#addText {
     width: 92%;
     height: 23px;
     border-radius: 7px;
@@ -281,3 +281,58 @@ header {
         width: 290px;
     }
 }
+
+
+/* first note div */
+.noten {
+    border: 1px solid black;
+    margin: 0px 5px;
+    border-radius: 7px;
+    margin-top: 10px;
+    height: 60px;
+}     /*  end */
+
+  /* task 1 input in right div  ++====  main heading  */
+.t1 {
+    margin-left: 8px;
+    margin-top: 2px;
+    border-radius: 7px;
+    border: white;
+    background-color: transparent;
+}    /*  end */
+
+  /* notes in right div in notes 1 */
+
+.des {
+    display: block;
+    margin-left: 8px;
+    margin-top: 15px;
+    border-radius: 7px;
+    width: 90%;
+    border: white;
+    background-color: transparent;
+}   /*  end */
+
+::placeholder {     
+    color: black;
+    opacity: 0.8;
+}      /*  end */
+
+/* button for settigns  */
+.b3{
+    position: relative;
+    top: -38px;
+    right: -454px;
+    font-size: 23px;
+    width: 27px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    background-color: transparent;
+}     /* end */
+
+/* for some css to settings icon */
+.fa-cog {
+    font-size: 23px;
+    color: black;
+}    /*  end */
