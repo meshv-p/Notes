@@ -281,7 +281,7 @@ header {
     height: 27px;
     cursor: pointer;
     position: relative;
-    top: 1px;
+/*     top: 1px; */
     left: 465px;
 }
 
