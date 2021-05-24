@@ -232,6 +232,24 @@ header {
     background-color: transparent;
 }     /* end */
 
+/* first note div */
+.noten {
+    border: 1px solid black;
+    margin: 0px 5px;
+    border-radius: 7px;
+    margin-top: 10px;
+    height: 60px;
+}     /*  end */
+
+  /* task 1 input in right div  ++====  main heading  */
+.t1 {
+    margin-left: 8px;
+    margin-top: 2px;
+    border-radius: 7px;
+    border: white;
+    background-color: transparent;
+}    /*  end */
+
 #hr2 {
     position: relative;
     top: -4px;
@@ -260,7 +278,7 @@ header {
     top: 27px;
 }     /*  end */
 
-/* plus icon for new notes */
+/*  div plus icon for new notes */
 .plus1 {
     display: inline;
     height: 26px;
@@ -270,7 +288,25 @@ header {
 
 }    /*  end */
 
-#plus {
+/*  div title for adding title */
+.title{
+    width: 85%;
+    margin: 0px 16px;
+}
+
+/* new notes add */
+#addText2 {
+    width: 83%;
+    height: 23px;
+    border-radius: 7px;
+    border: 1px solid black;
+    outline: none;
+    display:none;
+}     /*  end */
+
+
+/*   plus button for adding notes */
+#plus {   
     border-radius: 14px;
     border: none;
     /* background-color: #000; */
@@ -280,7 +316,7 @@ header {
     width: 26px;
     height: 27px;
     cursor: pointer;
-    /* position: relative; */
+    position: relative;
     /* top: -25px; */
     left: 465px;
 }
@@ -296,6 +332,7 @@ header {
     .right{
         width: 355px;
         margin-left: 0px;
+        height: 104vh;
     }
     .btnc{
         margin-left: 94px;
@@ -313,49 +350,40 @@ header {
         font-size: 28px;
     }
     .footer{
-        top: 93%;
+        top: 92%;
     }
     #addText{
         width: 89%;
-        top: 8px;
+        top: 9px;
+    }
+    #addText2{
+        position: relative;
+        top: -17px;
     }
     .op{
         width: 290px;
     }
     .plus1{
         position: relative;
-        top: 10px;
+        top: 9px;
         left: 0px;
     }
     #plus{
-        position: none;
+        position:initial;
     }
     .notesList{
         height: 88%;
     }
+    #hr2{
+        top: -13px;
+    }
+
 }
 
 
-/* first note div */
-.noten {
-    border: 1px solid black;
-    margin: 0px 5px;
-    border-radius: 7px;
-    margin-top: 10px;
-    height: 60px;
-}     /*  end */
 
-  /* task 1 input in right div  ++====  main heading  */
-.t1 {
-    margin-left: 8px;
-    margin-top: 2px;
-    border-radius: 7px;
-    border: white;
-    background-color: transparent;
-}    /*  end */
 
-  /* notes in right div in notes 1 */
-
+/* notes in right div in notes 1 */
 .des {
     display: block;
     margin-left: 8px;
@@ -391,20 +419,6 @@ header {
 }    /*  end */
 
 
-.title{
-    width: 85%;
-    margin: 0px 16px;
-}
-
-/* new notes add */
-#addText2 {
-    width: 83%;
-    height: 23px;
-    border-radius: 7px;
-    border: 1px solid black;
-    outline: none;
-    display:none;
-}     /*  end */
 
 .darkmode{
     background: #000;
