@@ -280,8 +280,8 @@ header {
     width: 26px;
     height: 27px;
     cursor: pointer;
-    position: relative;
-/*     top: 1px; */
+    /* position: relative; */
+    /* top: -25px; */
     left: 465px;
 }
 
@@ -315,11 +315,23 @@ header {
     .footer{
         top: 93%;
     }
-    #text{
+    #addText{
         width: 89%;
+        top: 8px;
     }
     .op{
         width: 290px;
+    }
+    .plus1{
+        position: relative;
+        top: 10px;
+        left: 0px;
+    }
+    #plus{
+        position: none;
+    }
+    .notesList{
+        height: 88%;
     }
 }
 
