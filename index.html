@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body >
+    <div class="search">
+        <input type="text" placeholder="Search"  id="searchTxt" >
+        <i class="fa fa-search" ></i></div>
+
     <!-- left side -->
     <div class="notes">
         <div class="left">your's list
@@ -26,29 +30,29 @@
 
         <!-- Right side -->
 
-        <div class="right ">
+        <div class="right "  >
             <header>
                 Today's Task
-                <hr>
+                <hr id="hr1" > 
+                <!-- <button id="darkmode"  onclick="dark()" ><i class="fa fa-unlock" > </i></button> -->
             </header>
-
+                <div class="notesList">
             <!-- Notes1 -->
             <div id="n1">
                 <div class="note1" id="p1">
                     <input type="text" placeholder="Task 1" id="t1"><input type="text" id="des"
                         placeholder="Description">
-                    <button id="b1" onclick="opt()"> <i class="fa fa-cog"></i></button>
+                    <button id="b1"  title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button>
                 </div>
                 <!--setting bar-->
                 <div class="op" id="optio">
                     <button onclick="checked()" class="btnc"><i class="fa fa-check check"></i> </button>
-                    <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr"
-                            aria-hidden="true"></i></button>
+                    <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
                 </div>
             </div>
 
             <!-- Notes 2 -->
-            <div id="n2">
+            <div id="n2"  >
                 <div class="note2">
                     <input type="text" placeholder="Task 2" id="t2"> <input type="text" placeholder="Descriptions"
                         id="des1">
@@ -62,163 +66,23 @@
             </div>
             <!-- add null notes -->
                 <div class="notesn"   id="notes">  </div>
+                    </div>  
 
 
-
-
+                        <hr  id="hr2">
             <!-- footer side -->
             <div class="footer" style="right: 0px;">
-                <input type="text" id="addText" name="" placeholder="Add new Task">
+                <input type="text"   id="addText2"    class="title" placeholder="Add new Title">
+                <input type="text" id="addText"  onclick="AddTitle()"   placeholder="Add new Task">
                 <div class="plus1">
-                    <button type="submit" id="plus">+</button>
+                    <button type="submit"  title="add notes"  onclick="removeTitle()" id="plus">+</button>
                 </div>
             </div>
 
 
         </div>
     </div>
-    <script>
-        // showing setting Option
-        function opt() {
-
-        if (document.getElementById('optio').style.display != 'none') {
-            document.getElementById('optio').style.display = 'none';
-            }
-        else {
-            document.getElementById('optio').style.display = 'block';   // optio.style.display
-            }
-            }    // end
-
-
-
-
-
-        // adding a notes
-        console.log("Welcome to notes app. This is app.js");
-        showNotes();
-
-        // If user adds a note, add it to the localStorage
-        let addBtn = document.getElementById("plus");
-        addBtn.addEventListener("click", function (e) {
-            let addTxt = document.getElementById("addText");
-            let notes = localStorage.getItem("notes");
-            if (notes == null) {
-                notesObj = [];
-            } else {
-                notesObj = JSON.parse(notes);
-            }
-            notesObj.push(addTxt.value);
-            localStorage.setItem("notes", JSON.stringify(notesObj));
-            addTxt.value = "";
-            console.log(notesObj);
-            showNotes();
-        });
-        // add notes show
-        function showNotes() {
-            let notes = localStorage.getItem("notes");
-            if (notes == null) {
-                notesObj = [];
-            } else {
-                notesObj = JSON.parse(notes);
-            }
-                let html = "";
-                    notesObj.forEach(function (element,index=0) {
-                    html += `<div class="notesn">
-                <div class="noten">
-                    <input type="text" class="t1" placeholder=" ${element}" value="${element}" > <input type="text" class="des"  placeholder="Descriptions">
-                    <button  onclick="option()" class="b3" id="b" > <i class="fa fa-cog"></i></button>
-                </div>
-                <div class="op"   id="${index}">
-                    <button onclick="checked()"   class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="removed1()" class="remove"><i class="fa fa-trash  tr " aria-hidden="true"></i></button>
-                </div>
-                </div>`;
-                    });
-                    let notesElm = document.getElementById("notes");
-                    if (notesObj.length != 0) {
-                    notesElm.innerHTML = html;
-                            }
-            }
-
-           
-            // showing setting Option
-        function option() {
-            
-            if ((this.index).style.display != 'none') {
-                (this.index).style.display = 'none';
-            }
-            else {
-                (this.index).style.display = 'block';   // optio.style.display
-            }
-
-
-          
-
-            // if (op2.style.display != 'none') {
-            //     op2.style.display = 'none';
-            // }
-            // else {
-            //     op2.style.display = 'block';   // optio.style.display
-            // }
-
-
-            // if (op3.style.display != 'none') {
-            //     op3.style.display = 'none';
-            // }
-            // else {
-            //     op3.style.display = 'block';   // optio.style.display
-            // }
-
-
-            // if (op4.style.display != 'none') {
-            //     op4.style.display = 'none';
-            // }
-            // else {
-            //     op4.style.display = 'block';   // optio.style.display
-            // }
-
-        }    // end
-    
-
-
-
-
-
-
-        // removing notes
-        function removed() {
-            var y = document.getElementById('n1');
-            y.remove(y.querySelector);
-        }
-
-
-        function removed1() {
-            var y = document.getElementById('n2');
-            y.remove(y.querySelector);
-        }
-
-        // check notes(strick through) 
-        function checked() {
-            if (t1.style.textDecoration != 'none') {
-                t1.style.textDecoration = 'none';
-            }
-            else {
-                t1.style.textDecoration = 'line-through';
-                // t1.style.textDecoration= 'line-through';
-            }
-        } // end
-
-        function opt1() {
-            if (optio1.style.display != 'none') {
-                optio1.style.display = 'none';
-            }
-            else {
-                optio1.style.display = 'block';
-            }
-        }
-    </script>
-
-
+<script src="app.js"></script>
 </body>
 
 </html>
