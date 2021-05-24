@@ -1,13 +1,9 @@
-
-
 // function dark(){
 //     if( onclick()== true ){
 
 //         document.getElementById('body').className= 'darkmode';
 //     }
 //     document.getElementById('body').className= 'darkmode';
-
-
 // }
 // for dark mode
 function dark() {
@@ -15,28 +11,25 @@ function dark() {
     element.classList.toggle("darkmode");
   }
 
-
-
-
 // search option
 // serch for
-  let search = document.getElementById('searchTxt');
-search.addEventListener("input", function () {
+//   let search = document.getElementById('searchTxt');
+// search.addEventListener("input", function () {
 
-    let inputVal = search.value.toLowerCase();
-    // console.log('Input event fired!', inputVal);
-    let noteCards = document.getElementsByClassName('note');
-    Array.from(noteCards).forEach(function (element) {
-        let cardTxt = element.getElementsByTagName("input")[0].innerText;
-        if (cardTxt.includes(inputVal)) {
-            element.style.display = "block";
-        }
-        else {
-            element.style.display = "none";
-        }
-        // console.log(cardTxt);
-    })
-}) 
+//     let inputVal = search.value.toLowerCase();
+//     // console.log('Input event fired!', inputVal);
+//     let noteCards = document.getElementsByClassName('note');
+//     Array.from(noteCards).forEach(function (element) {
+//         let cardTxt = element.getElementsByTagName("input")[0].innerText;
+//         if (cardTxt.includes(inputVal)) {
+//             element.style.display = "block";
+//         }
+//         else {
+//             element.style.display = "none";
+//         }
+//         // console.log(cardTxt);
+//     })
+// }) 
 
 
 // showing setting Option    // for 1 notes
@@ -212,7 +205,6 @@ function opt() {
             document.getElementById('addText2').style.display = 'block';
             document.getElementById('addText').style.top='2px';
             document.getElementById('plus').style.top='-26px';
-
             }
             function removeTitle(){
                 document.getElementById('addText2').style.display = 'none';
