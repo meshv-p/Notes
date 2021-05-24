@@ -20,14 +20,14 @@ function dark() {
 
 // search option
 // serch for
- /*  let search = document.getElementById('searchTxt');
+  let search = document.getElementById('searchTxt');
 search.addEventListener("input", function () {
 
     let inputVal = search.value.toLowerCase();
     // console.log('Input event fired!', inputVal);
     let noteCards = document.getElementsByClassName('note');
     Array.from(noteCards).forEach(function (element) {
-        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        let cardTxt = element.getElementsByTagName("input")[0].innerText;
         if (cardTxt.includes(inputVal)) {
             element.style.display = "block";
         }
@@ -36,7 +36,7 @@ search.addEventListener("input", function () {
         }
         // console.log(cardTxt);
     })
-})  */
+}) 
 
 
 // showing setting Option    // for 1 notes
@@ -73,22 +73,22 @@ function opt() {
                 }
             }   */
 
-            function option(){
-               if(document.getElementById('op1') = document.getElementById('o1') ) {
-              if (op1.style.display != 'none') {
-                op1.style.display = 'none';
-            }
-            else {
-                op1.style.display = 'block';   // optio.style.display
-            }  }
+            // function option(){
+            //    if(document.getElementById('op1') = document.getElementById('o1') ) {
+            //   if (op1.style.display != 'none') {
+            //     op1.style.display = 'none';
+            // }
+            // else {
+            //     op1.style.display = 'block';   // optio.style.display
+            // }  }
 
-            if ( document.getElementById('op2') = document.getElementById('o2')  ) {
-            if (op2.style.display != 'none') {
-                op2.style.display = 'none';
-            }
-            else {
-                op2.style.display = 'block';   // optio.style.display
-            } }  }
+            // if ( document.getElementById('op2') = document.getElementById('o2')  ) {
+            // if (op2.style.display != 'none') {
+            //     op2.style.display = 'none';
+            // }
+            // else {
+            //     op2.style.display = 'block';   // optio.style.display
+            // } }  }
 
         // }    // end
 
@@ -145,20 +145,23 @@ function opt() {
         // If user adds a note, add it to the localStorage
         let addBtn = document.getElementById("plus");
         addBtn.addEventListener("click", function (e) {
-            let addTxt = document.getElementById("addText");
-            // let AddTitle = document.getElementById("AddTitle");
+            let addTxt = document.getElementById("addText");   // addtext for txt
+            let AddTitle = document.getElementById("addText2");  // addtext2 for Title
             let notes = localStorage.getItem("notes");
             if (notes == null) {
                 notesObj = [];
             } else {
                 notesObj = JSON.parse(notes);
             }
-            notesObj.push(addTxt.value);
-            notesObj.push(AddTitle.value);
+            let myobj={
+                title: addText2.value, // addtext2
+                text : addText.value    //  addText 
+            }
+            notesObj.push(myobj);
             localStorage.setItem("notes", JSON.stringify(notesObj));
             addTxt.value = "";
             AddTitle.value = "";
-            // console.log(notesObj);
+            console.log(notesObj);
             showNotes();
         });
         // add notes show
@@ -170,13 +173,14 @@ function opt() {
                 notesObj = JSON.parse(notes);
             }
                 let html = "";
-                    notesObj.forEach(function (element,title,index) {
-                    html += `<div class="notesn">
+                    notesObj.forEach(function (element,index) {
+                    html += `
+                    <div class="notesn">
                 <div class="noten">
-                    <input type="text" class="t1"  value="${title}" > <input type="text" class="des"  placeholder="${element}">
+                    <input type="text" class="t1"  value="${element.title}" > <input type="text" class="des"  placeholder="${element.text}">
                     <button  onclick="option()" class="b3" id="o${index}" > <i class="fa fa-cog"></i></button>
                 </div>
-                <div class="op"   id="op${index}">
+                <div class="op">
                     <button onclick="checked()"   class="btnc"><i class="fa fa-check  check"></i> </button>
                     <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                 </div>
@@ -187,6 +191,20 @@ function opt() {
                     notesElm.innerHTML = html;
                             }
             }
+
+           
+                // for media queries
+                // function myFunction(x) {
+                //     if (x.matches) { // If media query matches
+                //       document.getById("n1").style.background="red";
+                //     } else {  
+                //         document.getById("n1").style.background="blue";
+                //     }
+                //   }
+                  
+                //   var x = window.matchMedia("(max-width: 500px)")
+                //   myFunction(x) // Call listener function at run time
+                //   x.addEventListener(myFunction) // Attach listener function on state changes
 
 
               //========== show Title bar========
@@ -199,4 +217,4 @@ function opt() {
             function removeTitle(){
                 document.getElementById('addText2').style.display = 'none';
                 document.getElementById('addText').style.top='27px';
-                document.getElementById('plus').style.top='-1px'; }
+                document.getElementById('plus').style.top='9px'; }
