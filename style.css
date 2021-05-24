@@ -1,4 +1,6 @@
 
+
+
 /* main div */
 .notes {   
     /* border: 2px solid red; */
@@ -13,8 +15,8 @@
     width: 100px;
     margin-left: 212px;
     height: 200px;
-    position: relative;
-    top: 0px;
+    position: absolute;
+    /* top: 0px; */
     border: 2px solid yellow;
     margin-top: 75px;
 }   /*  end */
@@ -27,17 +29,39 @@
     height: 95vh;
     position: relative;
     margin-top: 3px;
-    margin-left: 38.8px;
+    margin-left: 389px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: rgb(70, 209, 255);
-    /* background-color: $blue-500; */
+    /* background-color: rgb(70, 209, 255);    ffc947 */
+    background-color: #ebebeb ;
+    overflow: hidden;
+    
 }   /*  end */
+.notesList{
+    overflow:auto;
+    width: 507px;
+    height: 522px;
+    position: relative;
+    top: 3px;
+}
 
+#hr1{
+    position: relative;
+    top: -3px;
+}
+
+#n1{
+    margin-top: -8px;
+
+}
    /* header in right   */
 header {
     text-align: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    background-color: #ffc947;
+    border-radius: 10px;
+    height: 31px;
+    line-height: 26px;
 }     /*  end */
                     /* starting */
 /* first note div */
@@ -208,23 +232,32 @@ header {
     background-color: transparent;
 }     /* end */
 
+#hr2 {
+    position: relative;
+    top: -4px;
+}
+
 /* footer side */
 
 .footer {
     margin: 0px 3px;
     border-radius: 7px;
     position: absolute;
-    top: 94.1%;  /*561  590*/
-    width: 98%
+    top: 89.6%;  /*561  590*/
+    width: 98% ;
+    right:  0px;
+    left: 0px;
 }    /*  end */
 
 /* new notes add */
 #addText {
-    width: 92%;
+    width: 94%;
     height: 23px;
     border-radius: 7px;
     border: 1px solid black;
     outline: none;
+    position:relative;
+    top: 27px;
 }     /*  end */
 
 /* plus icon for new notes */
@@ -240,12 +273,16 @@ header {
 #plus {
     border-radius: 14px;
     border: none;
-    background-color: #000;
+    /* background-color: #000; */
+    background-color: #fbaf00;
     color: white;
     font-size: 22px;
     width: 26px;
     height: 27px;
     cursor: pointer;
+    position: relative;
+    top: 1px;
+    left: 465px;
 }
 
 
@@ -271,14 +308,14 @@ header {
         right: -304px;
         font-size: 28px;
     }
-     #b{
+    #b{
         right: -304px;
         font-size: 28px;
     }
     .footer{
         top: 93%;
     }
-    #addText{
+    #text{
         width: 89%;
     }
     .op{
@@ -340,3 +377,25 @@ header {
     font-size: 23px;
     color: black;
 }    /*  end */
+
+
+.title{
+    width: 85%;
+    margin: 0px 16px;
+}
+
+/* new notes add */
+#addText2 {
+    width: 83%;
+    height: 23px;
+    border-radius: 7px;
+    border: 1px solid black;
+    outline: none;
+    display:none;
+}     /*  end */
+
+.darkmode{
+    background: #000;
+    color: white;
+    /* filter: invert(100%); */
+}
