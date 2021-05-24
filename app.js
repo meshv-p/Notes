@@ -193,10 +193,10 @@ function opt() {
         function AddTitle() {
             document.getElementById('addText2').style.display = 'block';
             document.getElementById('addText').style.top='2px';
-            document.getElementById('plus').style.top='4px';
+            document.getElementById('plus').style.top='-26px';
 
             }
             function removeTitle(){
                 document.getElementById('addText2').style.display = 'none';
                 document.getElementById('addText').style.top='27px';
-                document.getElementById('plus').style.top='29px'; }
+                document.getElementById('plus').style.top='-1px'; }
