@@ -1,3 +1,4 @@
+var index=0;
 
 
 // function dark(){
@@ -29,6 +30,10 @@ search.addEventListener("input", function () {
     })
 }) 
 
+    
+
+
+
 
 // showing setting Option    // for 1 notes
 function opt() {
@@ -41,10 +46,10 @@ function opt() {
         }
         }    // end
 
-            // for removing bar
-                function  removebar() {
-        document.getElementById('bar').style.display = 'none';
-                }
+        //     // for removing bar
+        //         function  removebar() {
+        // document.getElementById('bar').style.display = 'none';
+        //         }
 
                 // let o${index} = document.getElementById('o${index}')
                 // if( o$`{index}` == indexof(b`$`) ){
@@ -56,17 +61,6 @@ function opt() {
                 //         }
                 // }
 
-
-
-        // for 2 notes 
-        function opt1() {
-            if (optio1.style.display != 'none') {
-                optio1.style.display = 'none';
-            }
-            else {
-                optio1.style.display = 'block';
-            }
-        }   // end
 
 
 
@@ -96,21 +90,21 @@ function opt() {
         var y = document.getElementById('n2');
         y.remove(y.querySelector);
     }
-          /*  start // ============== Function to delete a note    
-        // function deleteNote(index) {
+        //   start // ============== Function to delete a note    
+        function deleteNote(index) {
         //    console.log("I am deleting", index);
 
-        // let notes = localStorage.getItem("notes");
-        // if (notes == null) {
-        // notesObj = [];
-        // } else {
-        //     notesObj = JSON.parse(notes);
-        // }
+        let notes = localStorage.getItem("notes");
+        if (notes == null) {
+        notesObj = [];
+        } else {
+            notesObj = JSON.parse(notes);
+        }
 
-        //     notesObj.splice(index, 1);
-        // localStorage.setItem("notes", JSON.stringify(notesObj));
-        // showNotes();
-            // }  */ // end
+            notesObj.splice(index, 1);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        showNotes();
+            }   // end
 
 
 
@@ -145,8 +139,8 @@ function opt() {
             //     document.getElementById("plus").className= "rotate";
             //     document.getElementById('done').className="done";
                
-    
-
+            // index = index +1;
+            // console.log(index);
 
 
             showNotes();
@@ -166,12 +160,13 @@ function opt() {
                 <div class="noten">
                  <span   class="title"   >   ${element.title} </span> 
                   <span  class="notesm" role="textbox" style="display:  block;"> ${element.text} </span>
-                    <button  onclick="option()" class="b3" id="o${index}" > <i class="fa fa-cog"></i></button>
+                    <button  class="b3" id="o${index}" > <i class="fa fa-cog"></i></button>
                     <span class="time" id="min${index}" ></span>
                 </div>
-                <div class="op">
+                <div class="op" id="op${index}">
                     <button onclick="checked()"   class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button id="${index+1}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
+                    <button onclick="deleteNote(this.id)" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                    
                 </div>
                 </div>`;
                     });
@@ -184,6 +179,24 @@ function opt() {
                      }       
             }
             active();
+
+        //     var oindex = document.querySelector('.noten button');
+        //     // notesObj.forEach(function (index) {
+        //     // var opindex = document.getElementById(`op${index}`); 
+        //     var opindex =document.querySelector('.op');
+
+        //     (oindex).addEventListener('click',function () {
+        //         if((opindex).style.display !='none') {
+        //             (opindex).style.display = 'none'; }
+        //             else{
+        //                 (opindex).style.display = 'block'; } 
+                    
+        //    })
+            
+
+
+
+
             function active() {
                 
             
@@ -203,8 +216,8 @@ function opt() {
               //========== show Title bar========
         function AddTitle() {
             document.getElementById('addText2').style.display = 'block';
-            document.getElementById('addText').style.top='2px';
-            document.getElementById('plus').style.top='-24px';
+            document.getElementById('addText').style.top='-6px';
+            document.getElementById('plus').style.top='-33px';
             
 
             }
@@ -217,18 +230,182 @@ function opt() {
                 plus.classList.remove('active');
                 
             })
+                function fullscreen() {
+                    if(n1.style.display != 'block'){
+                        n1.classList.add('full');
+                    }
+                    
+                    else {
+                        n1.classList.remove('full');
 
+                    }
+                    }
         
-            // window.location.reload();
-                
-            //     var d = new Date();
-            //     var n = d.getUTCSeconds();
-            //     document.getElementById("min2").innerHTML = n;
-              
-            
-            
-            
-               
+
+
+
+           o0.addEventListener('click',function () {
+                if(op0.style.display !='none') {
+                    op0.style.display = 'none'; }
+                    else{
+                    op0.style.display = 'block'; } 
+                    
+           })
+           o1.addEventListener('click',function () {
+                if(op1.style.display !='none') {
+                    op1.style.display = 'none'; }
+                    else{
+                    op1.style.display = 'block'; } 
+                    
+           })  //2
+           o2.addEventListener('click',function () {
+                if(op2.style.display !='none') {
+                    op2.style.display = 'none'; }
+                    else{
+                    op2.style.display = 'block'; } 
+                    
+           })
+           o3.addEventListener('click',function () {
+                if(op3.style.display !='none') {
+                    op3.style.display = 'none'; }
+                    else{
+                    op3.style.display = 'block'; } 
+                    
+           }) //4
+           o4.addEventListener('click',function () {
+                if(op4.style.display !='none') {
+                    op4.style.display = 'none'; }
+                    else{
+                    op4.style.display = 'block'; } 
+                    
+           })
+           o5.addEventListener('click',function () {
+                if(op5.style.display !='none') {
+                    op5.style.display = 'none'; }
+                    else{
+                    op5.style.display = 'block'; } 
+                    
+           })
+           o6.addEventListener('click',function () {
+                if(op6.style.display !='none') {
+                    op6.style.display = 'none'; }
+                    else{
+                    op6.style.display = 'block'; } 
+                    
+           }) //7
+           o7.addEventListener('click',function () {
+                if(op7.style.display !='none') {
+                    op7.style.display = 'none'; }
+                    else{
+                    op7.style.display = 'block'; } 
+                    
+           })
+           o8.addEventListener('click',function () {
+                if(op8.style.display !='none') {
+                    op8.style.display = 'none'; }
+                    else{
+                    op8.style.display = 'block'; } 
+                    
+           })
+           o9.addEventListener('click',function () {
+                if(op9.style.display !='none') {
+                    op9.style.display = 'none'; }
+                    else{
+                    op9.style.display = 'block'; } 
+                    
+           })
+           o10.addEventListener('click',function () {
+                if(op10.style.display !='none') {
+                    op10.style.display = 'none'; }
+                    else{
+                    op10.style.display = 'block'; } 
+                    
+           })
+           o11.addEventListener('click',function () {
+                if(op11.style.display !='none') {
+                    op11.style.display = 'none'; }
+                    else{
+                    op11.style.display = 'block'; } 
+                    
+           })
+           o12.addEventListener('click',function () {
+                if(op12.style.display !='none') {
+                    op12.style.display = 'none'; }
+                    else{
+                    op12.style.display = 'block'; } 
+                    
+           })
+           o13.addEventListener('click',function () {
+                if(op13.style.display !='none') {
+                    op13.style.display = 'none'; }
+                    else{
+                    op13.style.display = 'block'; } 
+                    
+           })
+           o14.addEventListener('click',function () {
+                if(op14.style.display !='none') {
+                    op14.style.display = 'none'; }
+                    else{
+                    op14.style.display = 'block'; } 
+                    
+           }) //15
+           o15.addEventListener('click',function () {
+                if(op15.style.display !='none') {
+                    op15.style.display = 'none'; }
+                    else{
+                    op15.style.display = 'block'; }                    
+           })
+           o16.addEventListener('click',function () {
+                if(op16.style.display !='none') {
+                    op16.style.display = 'none'; }
+                    else{
+                    op16.style.display = 'block'; }                    
+           })
+           o17.addEventListener('click',function () {
+                if(op17.style.display !='none') {
+                    op17.style.display = 'none'; }
+                    else{
+                    op17.style.display = 'block'; }                    
+           })
+           o18.addEventListener('click',function () {
+                if(op18.style.display !='none') {
+                    op18.style.display = 'none'; }
+                    else{
+                    op18.style.display = 'block'; }                    
+           })
+           o19.addEventListener('click',function () {
+                if(op19.style.display !='none') {
+                    op19.style.display = 'none'; }
+                    else{
+                    op19.style.display = 'block'; }                    
+           }) //20
+           o20.addEventListener('click',function () {
+                if(op20.style.display !='none') {
+                    op20.style.display = 'none'; }
+                    else{
+                    op20.style.display = 'block'; }                    
+           })
+
+
+
+
+
+
+        //    var i = 0;
+        // //    var index;
+        //     for ( i=0; i= index;i++){
+        //         oi.addEventListener('click',function () {
+        //             console.log('here');
+        //             if(opi.style.display !='none') {
+        //                 opi.style.display = 'none';
+        //                 console.log('here2');
+        //             }
+        //                 else{
+        //                 opi.style.display = 'block'; } 
+                        
+        //        })
+        //     }
+
 
 
 
