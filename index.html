@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +8,16 @@
     <title>notes</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="phone.css"  media="screen and (max-width:700px)" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
 </head>
 
 <body >
-    <div class="search">
-        <input type="text" placeholder="Search"  id="searchTxt" >
-        <i class="fa fa-search" ></i></div>
+                <div class="search">        <!--   for searching button-->
+                    <input type="text" placeholder="Search"  id="searchTxt" >
+                        <i class="fa fa-search" ></i></div>
 
     <!-- left side -->
     <div class="notes">
@@ -37,51 +38,60 @@
                 <hr id="hr1" > 
                 <!-- <button id="darkmode"  onclick="dark()" ><i class="fa fa-unlock" > </i></button> -->
             </header>
-                <div class="notesList">
+                <div class="notesList" id="list">
             <!-- Notes1 -->
-            <div id="n1">
+           <div id="n1">
                 <div class="note1" id="p1">
-                    <input type="text" placeholder="Task 1" id="t1"><input type="text" id="des"
+                    <input type="text" placeholder="Task 1" id="t1" ><input type="text" id="des"
                         placeholder="Description">
-                    <button id="b1"  title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button>
-                </div>
+                    <button id="b1"  title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button> 
+                    <span class="time" >time  </span>
+                </div>  
+                <!-- setting  -->
+                     <div  class="bar"   id="bar$">
+                        <i class="fas fa-greater-than"></i>
+                            <button onclick="checked()"   onblur="removebar()"  class="btnc"><i class="fa fa-check check"></i> </button>
+                            <button class="remove" onclick="removed()"  onblur="removebar()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                    </div> 
+
+
                 <!--setting bar-->
-                <div class="op" id="optio">
+               <div class="op" id="optio">
                     <button onclick="checked()" class="btnc"><i class="fa fa-check check"></i> </button>
                     <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                </div>
-            </div>
+                </div> 
+             </div>
 
-            <!-- Notes 2 -->
-            <div id="n2"  >
-                <div class="note2">
-                    <input type="text" placeholder="Task 2" id="t2"> <input type="text" placeholder="Descriptions"
-                        id="des1">
-                    <button id="b2" onclick="opt1()"> <i class="fa fa-cog"></i></button>
-                </div>
-                <div class="op" id="optio1">
-                    <button onclick="checked()" class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="removed1()" class="remove"><i class="fa fa-trash  tr "
-                            aria-hidden="true"></i></button>
-                </div>
-            </div>
+            
             <!-- add null notes -->
-                <div class="notesn"   id="notes">  </div>
+                <div class="notesn" id="notes">  </div>
                     </div>  
 
 
                         <hr  id="hr2">
             <!-- footer side -->
             <div class="footer" style="right: 0px;">
-                <input type="text"   id="addText2"    class="title" placeholder="Add new Title">
-                <input type="text" id="addText"  onclick="AddTitle()"   placeholder="Add new Task">
+                <input type="text"   id="addText2"  required  class="title" min="2" placeholder="Add new Title">
+                <input type="text" id="addText"  onclick="AddTitle()"  placeholder="Add new Task"  required>
                 <div class="plus1">
-                    <button type="submit"  title="add notes"  onclick="removeTitle()" id="plus">+</button>
+                    <button type="submit"   title="add notes" id="plus" class="plus" >+</button>
+                   
                 </div>
             </div>
            
         </div>
     </div>
+    <div  id="done">
+        done    time is  <span id="time"> </span>
+    </div>
+
+    <div class="footer-icon">
+           
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" style=" fill:#000000;"><path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>  
+            <div class="vl"></div>
+
+    </div>
+    
  <script src="app.js"></script>
 </body>
 
