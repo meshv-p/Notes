@@ -45,10 +45,12 @@
 }   /*  end */
 .notesList{
     overflow:auto;
+    overflow-x: hidden;
     width: 507px;
     height: 522px;
     position: relative;
     top: 3px;
+    scroll-behavior: smooth;
 }
 
 #hr1{
@@ -73,7 +75,8 @@ header {
 /* first note div */
 .note1 {
     border: 1px solid black;
-    margin: 0px 5px;
+    margin: 0px 2px;
+    width: 485px;
     border-radius: 7px;
     margin-top: 10px;
     height: 60px;
@@ -219,7 +222,8 @@ header {
 /* second notes part  */
 .note2 {
     border: 1px solid black;
-    margin: 0px 5px;
+    margin: 0px 2px;
+    width: 485px;
     margin-top: 10px;
     height: 60px;
     border-radius: 7px;
@@ -256,6 +260,12 @@ header {
     background-color: transparent;
 }    /*  end */
 
+.notesn{
+    margin: 0px -1px;
+    width: 496px;
+}
+
+
 #hr2 {
     position: relative;
     top: -4px;
@@ -289,8 +299,9 @@ header {
     display: inline;
     height: 26px;
     width: 28px;
+    position: relative;
+    top: 0px;
     
-
 
 }    /*  end */
 
@@ -312,19 +323,86 @@ header {
 
 
 /*   plus button for adding notes */
-#plus {   
+.plus {   
     border-radius: 14px;
-    border: none;
-    /* background-color: #000; */
-    background-color: #fbaf00;
+    border: none;  
     color: white;
     font-size: 22px;
     width: 26px;
     height: 27px;
-    cursor: pointer;
     position: relative;
-    /* top: -25px; */
     left: 465px;
+    /* transform: rotate(10deg); */
+    pointer-events: none;
+    background-color: #fbb000b2;
+    opacity: 0.6;
+    top: 0px;
+}
+
+.active{
+    cursor: pointer;
+    background-color: #fbaf00;
+    pointer-events: all;  
+    opacity: 1;
+}
+/* .done{
+   
+    position: relative;
+    top: -61px;
+    left: 900px;
+    width: 5vw;
+    height: 4vh;
+    text-align: center;
+    background-color: rgb(6 218 6);
+    color: black;
+    padding-top: 6px;
+    transition-duration: 2s;
+    animation: done 2s 1;
+    
+} */
+
+.time{
+    position: relative;
+    /* border: 2px solid red; */
+    top: -20px;
+    left: 400px;
+}
+
+
+@keyframes done {
+    from{
+        position: relative;
+        top: -61px;
+        left: 900px;
+        width: 5vw;
+        height: 4vh;
+        text-align: center;
+        background-color: rgb(6 218 6);
+        color: black;
+        padding-top: 6px;
+        display: inline;
+    }
+    to{
+        background-color: white;
+        color: white;
+
+    }
+}
+/* .rotate{
+      animation: rotate 2s 1;
+      animation: rotate 2s 1;
+    left: 466px;
+    border: 2px solid red;
+    position: relative;
+    top: 3px;
+} */
+@keyframes rotate {
+        from{
+            transform: rotate(10deg);
+        }
+        to {
+            transform: rotate(70deg);
+        }
 }
 
 
@@ -383,7 +461,9 @@ header {
     #hr2{
         top: -13px;
     }
-
+    .search {
+        display: none;
+    }
 }
 
 
@@ -408,7 +488,7 @@ header {
 /* button for settigns  */
 .b3{
     position: relative;
-    top: -38px;
+    top: -38px;   
     right: -454px;
     font-size: 23px;
     width: 27px;
@@ -433,3 +513,53 @@ header {
     color: white;
     /* filter: invert(100%); */
 }
+.notesm{
+    display: inline-block;
+    margin: 5px;
+    margin-left: 16px;
+    width: fit-content;
+    height: fit-content;
+}
+.title{
+    margin: 5px;
+    margin-left: 16px;
+}
+.bar {
+    background-color: yellow;
+    display: inline;
+    width: 227px;
+    height: 60px;
+    position: absolute;
+    top: 3px;
+    left: 268px;
+    display: none;
+    text-align: center;
+    transform: translate();
+}
+.ser {
+    color: yellow;
+}
+
+.footer-icon{
+    display:none;
+    margin-top: 100%;
+    width: 100%;
+}
+body{
+    min-height: 100vh;
+}
+/* for vertical line  */
+.vl {
+    border-left: 2px solid hsl(0deg 0% 3%);
+    height: 39px;
+    position: relative;
+    left: 18%;
+    margin-left: -3px;
+    top: -38px;
+  }
+
+svg{
+    margin-left: 16px;
+    margin-top: 5px;
+    cursor: pointer;
+}  
