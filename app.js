@@ -246,7 +246,7 @@ function opt() {
                 // }
                 check0.addEventListener('click',function () {
                     if(c0.style.textDecoration !='none') {
-                        c0.style.textDecoration = 'none'; c0.style.opacity = '1' }
+                        c0.style.textDecoration = 'none'; c0.style.opacity = '1'; }
                         else{
                         c0.style.textDecoration = 'line-through'; c0.style.opacity = '.8';   } 
                         
