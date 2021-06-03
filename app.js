@@ -18,7 +18,7 @@ search.addEventListener("input", function () {
     let noteCards = document.getElementsByClassName('noten');
     Array.from(noteCards).forEach(function (element) {
         let cardTxt = element.getElementsByTagName("span")[0].innerText;
-        if (cardTxt.includes(cardTxt)) {
+        if (cardTxt.includes(inputVal)) {
             element.style.display = "block";
             // cardTxt.style.color="yellow";  
         }
