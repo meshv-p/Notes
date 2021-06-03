@@ -494,8 +494,7 @@ header {
 @media (max-width:350px) {
     .plus1{
         top: 35px;
-    }
-    
+    }   
     .footer{
         top: 87%;
     }
@@ -504,6 +503,7 @@ header {
     }
     #addText{
         top: 32px;
+       width: 86%;
     }
 }
 
