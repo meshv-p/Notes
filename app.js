@@ -1,6 +1,6 @@
 var index=0;
 
-
+showNotes();
 // function dark(){
 //     if( onclick()== true ){
 
@@ -44,7 +44,16 @@ function opt() {
     else {
         document.getElementById('bar').style.display = 'block';   // optio.style.display
         }
-        }    // end
+        }  
+        
+        
+        
+        
+        
+        
+        
+        
+        // end
 
         //     // for removing bar
         //         function  removebar() {
@@ -86,10 +95,10 @@ function opt() {
     }
 
 
-    function removed1() {
-        var y = document.getElementById('n2');
-        y.remove(y.querySelector);
-    }
+    // function removed1() {
+    //     var y = document.getElementById('n2');
+    //     y.remove(y.querySelector);
+    // }
         //   start // ============== Function to delete a note    
         function deleteNote(index) {
         //    console.log("I am deleting", index);
@@ -100,20 +109,13 @@ function opt() {
         } else {
             notesObj = JSON.parse(notes);
         }
-
             notesObj.splice(index, 1);
         localStorage.setItem("notes", JSON.stringify(notesObj));
+        window.location.reload();
+
         showNotes();
             }   // end
-
-
-
-
-
-
-
-
-        showNotes();
+        
 
         // If user adds a note, add it to the localStorage
        let addBtn = document.getElementById('plus')
@@ -141,8 +143,6 @@ function opt() {
                
             // index = index +1;
             // console.log(index);
-
-
             showNotes();
         });
         // add notes show
@@ -230,16 +230,16 @@ function opt() {
                 plus.classList.remove('active');
                 
             })
-                function fullscreen() {
-                    if(n1.style.display != 'block'){
-                        n1.classList.add('full');
-                    }
+                // function fullscreen() {
+                //     if(n1.style.display != 'block'){
+                //         n1.classList.add('full');
+                //     }
                     
-                    else {
-                        n1.classList.remove('full');
+                //     else {
+                //         n1.classList.remove('full');
 
-                    }
-                    }
+                //     }
+                //     }
         
 
 
