@@ -426,6 +426,8 @@ header {
     background-color: transparent;
 }     /* end */
 
+
+
 @media (max-width:500px) {
     .notes{
         border: none;
@@ -489,7 +491,21 @@ header {
        font-size: 28px;
     }
 }
-
+@media (max-width:350px) {
+    .plus1{
+        top: 35px;
+    }
+    
+    .footer{
+        top: 87%;
+    }
+    #addText2{
+        top: -2px;
+    }
+    #addText{
+        top: 32px;
+    }
+}
 
 
 
