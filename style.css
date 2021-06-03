@@ -413,6 +413,18 @@ header {
         }
 }
 
+/* button for settigns  */
+.b3{
+    position: relative;
+    top: -38px;   
+    right: -454px;
+    font-size: 23px;
+    width: 27px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    background-color: transparent;
+}     /* end */
 
 @media (max-width:500px) {
     .notes{
@@ -472,6 +484,10 @@ header {
     .search {
         display: none;
     }
+    .b3{
+       right: -305px; 
+       font-size: 28px;
+    }
 }
 
 
@@ -493,18 +509,6 @@ header {
     opacity: 0.8;
 }      /*  end */
 
-/* button for settigns  */
-.b3{
-    position: relative;
-    top: -38px;   
-    right: -454px;
-    font-size: 23px;
-    width: 27px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    background-color: transparent;
-}     /* end */
 
 /* for some css to settings icon */
 .fa-cog {
