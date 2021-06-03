@@ -29,12 +29,6 @@ search.addEventListener("input", function () {
         // console.log(cardTxt);
     })
 }) 
-
-    
-
-
-
-
 // showing setting Option    // for 1 notes
 function opt() {
 
@@ -44,15 +38,7 @@ function opt() {
     else {
         document.getElementById('bar').style.display = 'block';   // optio.style.display
         }
-        }  
-        
-        
-        
-        
-        
-        
-        
-        
+        }         
         // end
 
         //     // for removing bar
@@ -69,14 +55,6 @@ function opt() {
                 //         document.getElementById('bar').style.display = 'block';   // optio.style.display
                 //         }
                 // }
-
-
-
-
-
-        
-
-
       // check notes(strick through) 
       function checked() {
         if (t1.style.textDecoration != 'none') {
@@ -192,14 +170,8 @@ function opt() {
         //                 (opindex).style.display = 'block'; } 
                     
         //    })
-            
-
-
-
-
-            function active() {
-                
-            
+        
+            function active() {                          
             const addText = document.querySelector('.footer input');
             const plus = document.querySelector('.plus1 button');
             addText.onkeyup =()=>{
@@ -212,21 +184,29 @@ function opt() {
         }
         } }
               
-
+      
               //========== show Title bar========
         function AddTitle() {
             document.getElementById('addText2').style.display = 'block';
             document.getElementById('addText').style.top='-6px';
-            document.getElementById('plus').style.top='-33px';
-            
-
+            var m = window.matchMedia("(max-width:350px)");
+            myFunction(m) // Call listener function at run time
+            m.addEventListener(myFunction);
+            function myFunction() {
+                if(m.matches){        
+                    document.getElementById('pl').style.top='-4px'; 
+                    document.getElementById('pl').style.position='relative'; 
+                }
+                else{
+                    document.getElementById('plus').style.top='-33px';
+                    }
+                     }   
             }
 
-            plus.addEventListener("click",function(){
-                    
+            plus.addEventListener("click",function(){                    
                 document.getElementById('addText2').style.display = 'none';
                 document.getElementById('addText').style.top='27px';
-                plus.style.top='-1px';
+                pl.style.top='35px';
                 plus.classList.remove('active');
                 
             })
@@ -240,10 +220,6 @@ function opt() {
 
                 //     }
                 //     }
-        
-
-
-
            o0.addEventListener('click',function () {
                 if(op0.style.display !='none') {
                     op0.style.display = 'none'; }
