@@ -56,15 +56,15 @@ function opt() {
                 //         }
                 // }
       // check notes(strick through) 
-      function checked() {
-        if (t1.style.textDecoration != 'none') {
-            t1.style.textDecoration = 'none';
-        }
-        else {
-            t1.style.textDecoration = 'line-through';
-            // t1.style.textDecoration= 'line-through';
-        }
-    } // end
+    //   function checked() {
+    //     if (t1.style.textDecoration != 'none') {
+    //         t1.style.textDecoration = 'none';
+    //     }
+    //     else {
+    //         t1.style.textDecoration = 'line-through';
+    //         // t1.style.textDecoration= 'line-through';
+    //     }
+    //} // end
 
      // removing notes
      function removed() {
@@ -93,7 +93,8 @@ function opt() {
 
         showNotes();
             }   // end
-        
+         
+           
 
         // If user adds a note, add it to the localStorage
        let addBtn = document.getElementById('plus')
@@ -136,14 +137,14 @@ function opt() {
                     html += `
                     <div class="notesn">
                 <div class="noten">
-                 <span   class="title"   >   ${element.title} </span> 
-                  <span  class="notesm" role="textbox" style="display:  block;"> ${element.text} </span>
+                 <span   class="title"  id="c${index}"  >   ${element.title} </span> 
+                  <span  class="notesm"  id="c1${index}" role="textbox" style="display:  block;"> ${element.text} </span>
                     <button  class="b3" id="o${index}" > <i class="fa fa-cog"></i></button>
                     <span class="time" id="min${index}" ></span>
                 </div>
                 <div class="op" id="op${index}">
-                    <button onclick="checked()"   class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="deleteNote(this.id)" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                    <button  id="check${index}"  title="checked" class="btnc"><i class="fa fa-check  check"></i> </button>
+                    <button onclick="deleteNote(this.id)"  title="remove" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
                     
                 </div>
                 </div>`;
@@ -220,9 +221,79 @@ function opt() {
 
                 //     }
                 //     }
+                // function checked() {
+                //     // let x = document.getElementById('check0');
+                //     // if( x.matches ){
+                //     if (c0.style.textDecoration != 'none') {
+                //     console.log('i am checked',0);
+    
+                //         c0.style.textDecoration = 'none';
+                //     }
+                //     else {
+                //         c0.style.textDecoration = 'line-through';
+                //         // t1.style.textDecoration= 'line-through';
+                //     }
+                  
+                //     if (c1.style.textDecoration != 'none') {
+                //     console.log('i am checked',0);
+    
+                //         c1.style.textDecoration = 'none';
+                //     }
+                //     else {
+                //         c1.style.textDecoration = 'line-through';
+                //         // t1.style.textDecoration= 'line-through';
+                //     }    
+                // }
+                check0.addEventListener('click',function () {
+                    if(c0.style.textDecoration !='none') {
+                        c0.style.textDecoration = 'none'; c0.style.opacity = '1' }
+                        else{
+                        c0.style.textDecoration = 'line-through'; c0.style.opacity = '.8';   } 
+                        
+               })
+                check1.addEventListener('click',function () {
+                    if(c1.style.textDecoration !='none') {
+                        c1.style.textDecoration = 'none';
+                        c1.style.opacity = '1';
+                    }
+                        else{
+                        c1.style.textDecoration = 'line-through';
+                        c1.style.opacity = '.8';
+                    
+                    } 
+                        
+               })
+                check2.addEventListener('click',function () {
+                    if(c2.style.textDecoration !='none') {
+                        c2.style.textDecoration = 'none';
+                        c2.style.opacity = '1';
+                    }
+                        else{
+                        c2.style.textDecoration = 'line-through';
+                        c2.style.opacity = '.8';
+                    
+                    } 
+                        
+               })
+                check3.addEventListener('click',function () {
+                    if(c3.style.textDecoration !='none') {
+                        c3.style.textDecoration = 'none';
+                        c3.style.opacity = '1';
+                    }
+                        else{
+                        c3.style.textDecoration = 'line-through';
+                        c3.style.opacity = '.8';
+                    
+                    } 
+                        
+               })
+
+
+
+
            o0.addEventListener('click',function () {
                 if(op0.style.display !='none') {
-                    op0.style.display = 'none'; }
+                    op0.style.display = 'none';  }
                     else{
                     op0.style.display = 'block'; } 
                     
@@ -363,10 +434,6 @@ function opt() {
            })
 
 
-
-
-
-
         //    var i = 0;
         // //    var index;
         //     for ( i=0; i= index;i++){
@@ -381,12 +448,3 @@ function opt() {
                         
         //        })
         //     }
-
-
-
-
-
-
-
-
-
