@@ -32,7 +32,7 @@ search.addEventListener("input", function () {
 // showing setting Option    // for 1 notes
 function opt() {
 
-     if (document.getElementById('bar').style.display != 'block') {
+    if (document.getElementById('bar').style.display != 'block') {
         document.getElementById('bar').style.display = 'block';     
         }
     else {
@@ -139,7 +139,7 @@ function opt() {
                 <div class="noten">
                  <span   class="title"  id="c${index}"  >   ${element.title} </span> 
                   <span  class="notesm"  id="c1${index}" role="textbox" style="display:  block;"> ${element.text} </span>
-                    <button  class="b3" id="o${index}" > <i class="fa fa-cog"></i></button>
+                    <button  class="b3" id="o${index}"  onclick="set${index}()" > <i class="fa fa-cog"></i></button>
                     <span class="time" id="min${index}" ></span>
                 </div>
                 <div class="op" id="op${index}">
@@ -184,24 +184,107 @@ function opt() {
             plus.classList.remove('active');
         }
         } }
-              
+
+        function colors(){
+                if(color.style.display !='none' ){
+                    color.style.display ='none';
+                }
+                else{
+                    color.style.display ='block';
+                }
+
+        }
+
+                //==================important========
+                function important(){
+                    if(document.getElementById('p1').style.backgroundColor != 'indianred'){
+                        document.getElementById('bar').style.display = 'none';
+                        document.getElementById('p1').style.backgroundColor = 'indianred'; 
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                        console.log(theme);
+                        localStorage.setItem('theme',theme);
+                }
+                    else{
+                        document.getElementById('p1').style.backgroundColor= 'initial';
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+
+                    }
+                
+
+                }
+                // for red colors 
+
+                function red(){
+                    if(document.getElementById('p1').style.backgroundColor != 'red'){
+                        document.getElementById('bar').style.display = 'none';
+                        document.getElementById('p1').style.backgroundColor = 'red' ; 
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor= 'initial';
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                        
+                    }
+                }       
+                function green(){
+                    if(document.getElementById('p1').style.backgroundColor != 'green'){
+                        document.getElementById('p1').style.backgroundColor = 'green';
+                        document.getElementById('bar').style.display = 'none';
+
+                          var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor = 'initial';
+                    }
+                }       
+                function yellow(){
+                    if(document.getElementById('p1').style.backgroundColor != 'yellow'){
+                        document.getElementById('bar').style.display = 'none';
+                        document.getElementById('p1').style.backgroundColor = 'yellow'; 
+                          var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor = 'initial';
+                    }
+                }       
+
+
+                // for save in localstorage when reload page
+
+                if(localStorage.theme != "" ){
+                    p1.style.backgroundColor = localStorage.getItem('theme');
+                } 
+                else{
+                    p1.style.backgroundColor = 'initial';
+                }
+
       
               //========== show Title bar========
         function AddTitle() {
             document.getElementById('addText2').style.display = 'block';
             document.getElementById('addText').style.top='-6px';
-            var m = window.matchMedia("(max-width:350px)");
-            myFunction(m) // Call listener function at run time
-            m.addEventListener(myFunction);
-            function myFunction() {
-                if(m.matches){        
-                    document.getElementById('pl').style.top='-4px'; 
-                    document.getElementById('pl').style.position='relative'; 
-                }
-                else{
-                    document.getElementById('plus').style.top='-33px';
-                    }
-                     }   
+            // var m = window.matchMedia("(max-width:350px)");
+            // myFunction(m) // Call listener function at run time
+            // m.addEventListener(myFunction);
+            // function myFunction() {
+            //     if(m.matches){        
+            //         document.getElementById('pl').style.top='-4px'; 
+            //         document.getElementById('pl').style.position='relative'; 
+            //     }
+            //     else{
+            //     }
+            // }   
+            document.getElementById('plus').style.top='-33px';
             }
 
             plus.addEventListener("click",function(){                    
@@ -245,10 +328,10 @@ function opt() {
                 //     }    
                 // }
                 check0.addEventListener('click',function () {
-                    if(c0.style.textDecoration !='none') {
-                        c0.style.textDecoration = 'none'; c0.style.opacity = '1'; }
+                    if(c0.style.textDecoration !='line-through') {
+                        c0.style.textDecoration = 'line-through'; c0.style.opacity = '.8' ;}
                         else{
-                        c0.style.textDecoration = 'line-through'; c0.style.opacity = '.8';   } 
+                        c0.style.textDecoration = 'none'; c0.style.opacity = '1';   } 
                         
                })
                 check1.addEventListener('click',function () {
@@ -286,12 +369,9 @@ function opt() {
                     
                     } 
                         
-               })
+               }) 
 
-
-
-
-           function set0(){
+               function set0(){
                 if(document.getElementById('op0').style.display !='block') {
                     document.getElementById('op0').style.display = 'block';  
                         console.log('fired 1');
@@ -437,8 +517,6 @@ function opt() {
                     else{
                     op20.style.display = 'none'; }                    
            }
-
-
         //    var i = 0;
         // //    var index;
         //     for ( i=0; i= index;i++){
