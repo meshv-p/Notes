@@ -25,6 +25,7 @@
     /* top: 0px; */
     border: 2px solid yellow;
     margin-top: 75px;
+    border-radius: 10px;
 }   /*  end */
 
 /* right div */
@@ -35,7 +36,7 @@
     height: 95vh;
     position: relative;
     margin-top: 3px;
-    margin-left: 389px;
+    margin-left: 389px; /*389*/
     border: 1px solid black;
     border-radius: 10px;
     /* background-color: rgb(70, 209, 255);    ffc947 */
@@ -162,7 +163,7 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 150px;
+    margin-left: 10px;
 }
 .remove{                        /*   class*/
     border: none;
@@ -170,7 +171,7 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 52px;
+    margin-left: 61px;
 }
 
 .check {
@@ -424,9 +425,55 @@ header {
     background-color: white;
     cursor: pointer;
     background-color: transparent;
+    
 }     /* end */
-
-
+.btn{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.gr{
+    background-color: cadetblue;
+    color: darkblue;
+    position: relative;
+    left: 95px;
+    top: 8px;
+    border-radius: 10px;
+    border: none;
+    width: 25px;
+    height: 29px;
+    cursor: pointer;
+}
+.colors{
+    border: 2px solid red;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 50px;
+    border: 2px solid red;
+    position: relative;
+    top: -54px;
+    left: 232px;
+    width: 143px;
+    height: 38px;
+    border-radius: 10px;
+    background: beige;
+    display: none;
+}
+#b12{
+    margin-left: 7px;
+}
 
 @media (max-width:500px) {
     .notes{
@@ -483,7 +530,7 @@ header {
     #hr2{
         top: -13px;
     }
-/*     .search {
+    /* .search {
         display: none;
     } */
     .b3{
@@ -494,7 +541,8 @@ header {
 @media (max-width:350px) {
     .plus1{
         top: 35px;
-    }   
+    }
+    
     .footer{
         top: 87%;
     }
@@ -503,7 +551,7 @@ header {
     }
     #addText{
         top: 32px;
-       width: 86%;
+        width: 86%;
     }
 }
 
@@ -558,7 +606,7 @@ header {
     margin: 0px 27px;
     border-top: white;
     border-radius: 5px;
-    height: 28px;
+    height: 50px;
     display: none;
     width:435px;
     animation:backInDown  0.8s 1;
