@@ -186,11 +186,11 @@ function opt() {
         } }
 
         function colors(){
-                if(color.style.display !='none' ){
-                    color.style.display ='none';
+                 if(color.style.display !='block' ){
+                    color.style.display ='block';
                 }
                 else{
-                    color.style.display ='block';
+                    color.style.display ='none';
                 }
 
         }
