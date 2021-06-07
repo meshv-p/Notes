@@ -135,12 +135,12 @@ function opt() {
             }
                   // for checked notes options
              function checked(index) {
-                console.log("i checked" , index);   // c0
+//                 console.log("i checked" , index);   // c0
                 var id = "check" + index;
                 var index2 = document.getElementById(id) ;
                 var id1 = "1" + index;
                 var text = document.getElementById(id1); 
-                console.log(id1);
+//                 console.log(id1);
                 if(index2.style.textDecoration !='line-through') {
                 index2.style.textDecoration = 'line-through';  
                 index2.style.opacity = '.8' ;
@@ -286,7 +286,7 @@ function opt() {
 
                  // for showing setting options
              function opened(index) {
-                console.log("i clicked" , index);
+//                 console.log("i clicked" , index);
                 var id = "p" + index;
                 var index1 = document.getElementById(id) ;
                 // console.log(index1);
