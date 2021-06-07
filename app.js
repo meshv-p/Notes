@@ -103,7 +103,7 @@ function opt() {
                 <div class="noten">
                  <span   class="title"  id="checkc${index}"  > ${element.title} </span> 
                   <span  class="notesm"  id="1c${index}" role="textbox" style="display:  block;">${element.text} </span>
-                  <button  class="b3" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>
+                  <button  class="b3 outline" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>
                                    
                   
                 </div>
