@@ -104,13 +104,20 @@ function opt() {
                  <span   class="title"  id="checkc${index}"  > ${element.title} </span> 
                   <span  class="notesm"  id="1c${index}" role="textbox" style="display:  block;">${element.text} </span>
                   <button  class="b3" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>
-                    
+                                   
+                  
                 </div>
                 <div class="op" id="po${index}">
-                    <button  id="c${index}"  onclick="checked(this.id)" title="checked" class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="deleteNote(this.id)" id="${index}"  title="remove" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                    
-                </div>
+                    <button  id="c${index}"  onclick="checked(this.id)" title="checked" class="btnc outline"><i class="fa fa-check  check"></i> </button>
+                    <button onclick="deleteNote(this.id)" id="${index}"  title="remove" class="remove trash outline"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                    <button class="gr outline" onclick="colors()"><i class="fa fa-greater-than"></i></button>                                  
+                              <div class="colors" id="colorc${index}" onclick="colored(this.id)">
+                                <button  id="b12" style="background: pink;border-radius: 7px; margin-left: 7px;" onclick="important()"><i class="fas fa-exclamation"></i></button>
+                                <button onclick="red()"    title="red" class="btn red"  ></button>
+                                <button onclick="green()"  title="green" class="btn  green"></button>
+                                <button onclick="yellow()" title="yellow" class="btn yellow"></button>   
+                              </div> 
+                </div>  
                 </div>`;  /* // <div class="notesn">
                 <div class="noten">
                  <span   class="title"  id="c${index}"  >   ${element.title} </span> <span>${index} </span>
@@ -133,14 +140,32 @@ function opt() {
                         notesElm.innerHTML = "Nothing to see your notes here. You haven't saved Your  notes. Just type Yuor notes and hit plus button. ";
                      }       
             }
+                 // for showing color options
+             function colored(index) {
+                console.log("i clicked" , index);
+                var id = "color" + index;
+                var index1 = document.getElementById(id);
+                // console.log(index1);
+                if(index1.style.display !='block') {
+                index1.style.display = 'block';  
+                // console.log('fired 1');
+                }
+                    else{
+                index1.style.display = 'none'; 
+                // console.log('fired 2');               
+                 } 
+                 }
+
+
+
                   // for checked notes options
              function checked(index) {
-//                 console.log("i checked" , index);   // c0
+                console.log("i checked" , index);   // c0
                 var id = "check" + index;
                 var index2 = document.getElementById(id) ;
                 var id1 = "1" + index;
                 var text = document.getElementById(id1); 
-//                 console.log(id1);
+                console.log(id1);
                 if(index2.style.textDecoration !='line-through') {
                 index2.style.textDecoration = 'line-through';  
                 index2.style.opacity = '.8' ;
@@ -286,7 +311,7 @@ function opt() {
 
                  // for showing setting options
              function opened(index) {
-//                 console.log("i clicked" , index);
+                console.log("i clicked" , index);
                 var id = "p" + index;
                 var index1 = document.getElementById(id) ;
                 // console.log(index1);
