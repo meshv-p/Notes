@@ -144,7 +144,7 @@ function opt() {
                 </div>
                 <div class="op" id="op${index}">
                     <button  id="check${index}"  title="checked" class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="deleteNote(this.id)"  title="remove" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                    <button onclick="deleteNote(this.id)"  id="${index}" title="remove" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
                     
                 </div>
                 </div>`;
