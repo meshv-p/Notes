@@ -44,37 +44,27 @@
             <!-- Notes1 -->
            <div id="n1">
                 <div class="note1" id="p1">
-                    <input type="text" placeholder="Task 1" id="t1" ><input type="text" id="des"
+                    <input type="text" placeholder="Task 1" id="t1"><input type="text" id="des"
                         placeholder="Description">
-                    <button id="b1"  title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button> 
-                    <span class="time" >time  </span>
+                    <button id="b1"  class="outline" title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button> 
+                   
                 </div>  
                 <!-- setting  -->
-                     <div  class="bar"   id="bar">
-                            <button onclick="checked()"   onblur="removebar()"  class="btnc"><i class="fa fa-check check"></i> </button>
-                            <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                     <div  class="bar" id="bar">
+                            <button onclick="checked()" onblur="removebar()"  class="btnc outline"><i class="fa fa-check check"></i> </button>
+                            <button class="remove outline" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
                             
-                        <button class="gr" onclick="colors()"><i class="fa fa-greater-than"></i></button>
-                                   
+                        <button class="gr outline" onclick="colors()"><i class="fa fa-greater-than"></i></button>                                  
                               <div class="colors" id="color">
                                 <button  id="b12" style="background: pink;border-radius: 7px; margin-left: 7px;" onclick="important()"><i class="fas fa-exclamation"></i></button>
                                 <button onclick="red()"    title="red" class="btn red"  ></button>
                                 <button onclick="green()"  title="green" class="btn  green"></button>
                                 <button onclick="yellow()" title="yellow" class="btn yellow"></button>   
-                              </div> 
-                            
-
-
-                           
+                              </div>                           
                     </div> 
 
 
-                <!--setting bar-->
-               <div class="op" id="optio">
-                    <button onclick="checked()" class="btnc"><i class="fa fa-check check"></i> </button>
-                    <button class="remove" onclick="removed()" class="trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                </div> 
-             </div>
+               
 
             
             <!-- add null notes -->
@@ -88,16 +78,16 @@
                 <input type="text"   id="addText2"  required  class="title" min="2" placeholder="Add new Title">
                 <input type="text" id="addText"  onclick="AddTitle()"  placeholder="Add new Task"  required>
                 <div class="plus1" id="pl">
-                    <button type="submit"   title="add notes"    id="plus" class="plus" >+</button>
+                    <button type="submit"   title="add notes"  id="plus" class="plus" >+</button>
                    
                 </div>
             </div>
            
         </div>
     </div>
-    <!-- <div  id="done">
-        done    time is  <span id="time"> </span>
-    </div> -->
+
+   
+   
 
     <div class="footer-icon">
            
