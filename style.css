@@ -639,3 +639,6 @@ svg{
     margin-top: 5px;
     cursor: pointer;
 }  
+.outline{
+ outline:none;
+}
