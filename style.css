@@ -164,7 +164,8 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 10px;
+    margin-left: 17px;
+    margin-top: 15px;
 }
 .remove{                        /*   class*/
     border: none;
@@ -172,7 +173,8 @@ header {
     width: 27px;
     border-radius: 24px;
     height: 25px;
-    margin-left: 61px;
+    margin-left: 82px;
+    /* margin-l: 82px; */
 }
 
 .check {
@@ -375,7 +377,7 @@ header {
     position: relative;
     /* border: 2px solid red; */
     top: -20px;
-    left: 400px;
+    left: 180px;
 }
 
 
@@ -447,12 +449,12 @@ header {
     background-color: cadetblue;
     color: darkblue;
     position: relative;
-    left: 95px;
-    top: 8px;
+    left: 85px;
+    top: 6px;
     border-radius: 10px;
     border: none;
     width: 25px;
-    height: 29px;
+    height: 28px;
     cursor: pointer;
 }
 .colors{
@@ -607,10 +609,13 @@ header {
     margin: 0px 27px;
     border-top: white;
     border-radius: 5px;
-    height: 50px;
+    background-color: blanchedalmond;
+    height: 147px;
     display: none;
     width:435px;
     animation:backInDown  0.8s 1;
+    z-index: 71;
+    position: relative;
 }
 .ser {
     color: yellow;
@@ -640,5 +645,137 @@ svg{
     cursor: pointer;
 }  
 .outline{
- outline:none;
+    outline: none;
+}
+.option {
+    border: 1px solid red;
+    width: 435px;
+    height: 147px;
+    margin-left: 27px;
+    border-radius: 10px;
+    display: none;
+}
+
+.btn {
+    border-radius: 9px; border: none; width: 27px; height: 26px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.che{
+    margin-left: 45px;
+    margin-top: 12px;/*15*/
+    cursor: pointer;
+    background-color: cornflowerblue; color: black;
+}   
+.fa{
+margin-left: 1px; font-size: 14px;
+}
+.remove {
+    margin-left: 82px;
+}
+
+.pin {
+    margin-left: 85px;
+}
+
+.time1 {
+    margin-left: 85px;
+}
+
+#hr21 {
+    border-bottom: none;
+    margin-top: 25px;
+}
+
+#hr22 {
+    border-bottom: none;
+    width: 17%;
+    margin-top: 8px;
+    transform: rotate(90deg);
+    margin-left: 78px;
+}
+
+.share {
+    margin-left: 45px;
+}
+
+.color {
+    /* border: 1px solid red; */
+    width: 285px;
+    height: 85px;
+    margin-top: -43px;
+    margin-left: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 117px);
+}
+
+.text {
+    transform: rotate(90deg);
+    color: rosybrown;
+    font-size: 14px;
+    position: relative;
+    top: 138px;
+    left: 206px;
+}
+
+.font {
+    font-size: 10px;
+}
+
+#ch {
+    position: relative;
+    top: -132px;
+    left: 40px;
+   
+}
+
+#re {
+    position: relative;
+    top: -132px;
+    left: 115px;
+}
+
+#pi {
+    position: relative;
+    top: -132px;
+    left: 197px;
+}
+
+#ti {
+    position: relative;
+    top: -132px;
+    left: 283px;
+}
+
+#sh {
+    position: relative;
+    top: -76px;
+    left: -90px;
+}
+
+.red {
+    margin-left: 12px;
+    background-color: red;
+}
+
+.yellow {
+    margin-left: 12px;
+    background-color: yellow;
+
+}
+.b{
+    background-color: blue;
+}
+.g{
+    background-color: green;
+}
+.li{
+    background-color: lightgreen;
+}
+.sr{
+    background-color: silver;
+}
+.last {
+    margin-left: -5px;
 }
