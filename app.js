@@ -26,11 +26,11 @@ search.addEventListener("input", function () {
 // showing setting Option    // for 1 notes
 function opt() {
 
-    if (document.getElementById('bar').style.display != 'block') {
-        document.getElementById('bar').style.display = 'block';     
+    if (document.getElementById('opt').style.display != 'block') {
+        document.getElementById('opt').style.display = 'block';     
         }
     else {
-        document.getElementById('bar').style.display = 'none';   // optio.style.display
+        document.getElementById('opt').style.display = 'none';   // optio.style.display
         }
         }         
         // end
@@ -100,37 +100,51 @@ function opt() {
                     notesObj.forEach(function (element,index) {
                     html += `
                     <div class="notesn">
-                <div class="noten">
-                 <span   class="title"  id="checkc${index}"  > ${element.title} </span> 
-                  <span  class="notesm"  id="1c${index}" role="textbox" style="display:  block;">${element.text} </span>
-                  <button  class="b3 outline" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>
-                                   
-                  
+                        <div class="noten" id="noten${index}">
+                          <span   class="title"  id="checkc${index}"  > ${element.title} </span> 
+                          <span  class="notesm"  id="1c${index}" role="textbox" style="display:  block;">${element.text} </span>
+                          <button  class="b3" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>  
+                        </div>
+                        <div class="option" id="po${index}">
+                    <button class="btn che" title="If Your notes is done You can tick cross." id="c${index}" onclick="checked(this.id)"><i class="fa fa-check " ></i></button> <!-- checked -->
+                    <button class="btn remove" title="If it is done then remove Notes." onclick="deleteNote(this.id)" id="${index}" ><i class="fa fa-trash-alt" ></i></button> <!-- remove -->
+                    <button class="btn pin" title="Favorite notes so You can see in favorite section." onclick="star()"><i class="fa fa-star"></i></button> <!-- pinned -->
+                    <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
+                    <hr id="hr21">
+                    <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
+                    <hr id="hr22">
+                    <div class="color">
+                        <button class="btn red" title="Red" onclick="red()"></button> <!-- red -->
+                        <button class="btn b" title="Blue" onclick="blue()"></button> <!-- blue -->
+                        <button class="btn last g" title="Green" onclick="green()"></button><!--green  -->
+                        <button class="btn yellow" title="Yellow" onclick="yellow()"></button>
+                        <button class="btn li" title="LightGreen" onclick="lightgreen()"></button>
+                        <button class="btn last sr" title="Silver" onclick="silver()"></button>
+                    </div>
+                    <div class="text">Colors</div>
+                    <span class="font " id="ch" >Checked</span>
+                    <span class="font " id="re" >Remove</span>
+                    <span class="font " id="pi" >Pinned</span>
+                    <span class="font " id="ti" >Timer</span>
+                    <span class="font " id="sh" >Share</span>
                 </div>
-                <div class="op" id="po${index}">
-                    <button  id="c${index}"  onclick="checked(this.id)" title="checked" class="btnc outline"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="deleteNote(this.id)" id="${index}"  title="remove" class="remove trash outline"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                    <button class="gr outline" onclick="colors()"><i class="fa fa-greater-than"></i></button>                                  
-                              <div class="colors" id="colorc${index}" onclick="colored(this.id)">
+
+                    </div>`;  
+                        /*    <div class="op" id="po${index}">
+                            <button  id="c${index}"  onclick="checked(this.id)" title="checked" class="btnc outline"><i class="fa fa-check  check"></i> </button>
+                            <button onclick="deleteNote(this.id)" id="${index}"  title="remove" class="remove trash outline"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
+                            <button class="gr outline" onclick="colors()"><i class="fa fa-greater-than"></i></button>                                  
+                            <div class="colors" id="colorc${index}" onclick="colored(this.id)">
                                 <button  id="b12" style="background: pink;border-radius: 7px; margin-left: 7px;" onclick="important()"><i class="fas fa-exclamation"></i></button>
                                 <button onclick="red()"    title="red" class="btn red"  ></button>
                                 <button onclick="green()"  title="green" class="btn  green"></button>
                                 <button onclick="yellow()" title="yellow" class="btn yellow"></button>   
-                              </div> 
-                </div>  
-                </div>`;  /* // <div class="notesn">
-                <div class="noten">
-                 <span   class="title"  id="c${index}"  >   ${element.title} </span> <span>${index} </span>
-                  <span  class="notesm"  id="c1${index}" role="textbox" style="display:  block;"> ${element.text} </span>
-                  <button  class="b3" id="o${index}"  onclick="set${index}()" > <i class="fa fa-cog"></i></button>
-                    <span class="time" id="min${index}" >time</span>
-                </div>
-                <div class="op" id="op${index}">
-                    <button  id="check${index}"  title="checked" class="btnc"><i class="fa fa-check  check"></i> </button>
-                    <button onclick="deleteNote(this.id)" id="${index}"  title="remove" class="remove trash"><i class="fa fa-trash tr" aria-hidden="true"></i></button>
-                    
-                </div>
-                </div>` */
+                            </div> 
+                        </div>*/
+
+
+
+
                     });
                     let notesElm = document.getElementById("notes");
                     if (notesObj.length != 0) {
@@ -196,19 +210,43 @@ function opt() {
             plus.classList.remove('active');
         }
         } }
-
-        function colors(){
-                if(color.style.display !='block' ){
-                    color.style.display ='block';
+        //================for check =======================
+            function check(){
+                if(document.getElementById('t1').style.textDecoration !='line-through'){
+                    document.getElementById('t1').style.textDecoration ='line-through';
                 }
                 else{
-                    color.style.display ='none';
+                    document.getElementById('t1').style.textDecoration ='none';
                 }
+            }
+        //================for remove =======================
+            function remove(){
+                if(document.getElementById('n1').style.display !='none'){
+                    document.getElementById('n1').style.display ='none';
+                }
+                else{
+                    document.getElementById('n1').style.display ='block';
+                }
+            }
+        //================for pinned=======================
+            function star(){
+                if(document.getElementById('n1').style.display !=''){
+                    document.getElementById('n1').style.display ='none';
+                }
+                else{
+                    document.getElementById('n1').style.display ='block';
+                }
+            }
+        //================for share=======================
+            function share(){
+                var link = "https://meshv-p.github.io/Notes";
+                console.log(link);
+                window.location  = "https://web.whatsapp.com"; 
+            }
+      
+         //================for colors section======================
 
-            }  
-         
-
-                //==================important========
+                //==================indianred========
                 function important(){
                     if(document.getElementById('p1').style.backgroundColor != 'indianred'){
                         document.getElementById('bar').style.display = 'none';
@@ -222,16 +260,12 @@ function opt() {
                         var theme = document.getElementById('p1').style.backgroundColor; 
                             console.log(theme);
                             localStorage.setItem("theme", theme);
-
                     }
-                
-
                 }
-                // for red colors 
+                // =================red===============
 
                 function red(){
                     if(document.getElementById('p1').style.backgroundColor != 'red'){
-                        document.getElementById('bar').style.display = 'none';
                         document.getElementById('p1').style.backgroundColor = 'red' ; 
                         var theme = document.getElementById('p1').style.backgroundColor; 
                             console.log(theme);
@@ -245,10 +279,28 @@ function opt() {
                         
                     }
                 }       
+                // =================blue===============
+
+                function blue(){
+                    if(document.getElementById('p1').style.backgroundColor != 'blue'){
+                        document.getElementById('p1').style.backgroundColor = 'blue' ; 
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor= 'initial';
+                        var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                        
+                    }
+                }       
+            // =============Green=================================
+            //=====================================    
                 function green(){
                     if(document.getElementById('p1').style.backgroundColor != 'green'){
                         document.getElementById('p1').style.backgroundColor = 'green';
-                        document.getElementById('bar').style.display = 'none';
 
                           var theme = document.getElementById('p1').style.backgroundColor; 
                             console.log(theme);
@@ -257,11 +309,38 @@ function opt() {
                     else{
                         document.getElementById('p1').style.backgroundColor = 'initial';
                     }
-                }       
+                }    
+              // =============Yellow=================================
+            //=====================================          
                 function yellow(){
                     if(document.getElementById('p1').style.backgroundColor != 'yellow'){
-                        document.getElementById('bar').style.display = 'none';
                         document.getElementById('p1').style.backgroundColor = 'yellow'; 
+                          var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor = 'initial';
+                    }
+                }       
+              // =============lightgreen=================================
+            //=====================================          
+                function lightgreen(){
+                    if(document.getElementById('p1').style.backgroundColor != 'lightgreen'){
+                        document.getElementById('p1').style.backgroundColor = 'lightgreen'; 
+                          var theme = document.getElementById('p1').style.backgroundColor; 
+                            console.log(theme);
+                            localStorage.setItem("theme", theme);
+                    }
+                    else{
+                        document.getElementById('p1').style.backgroundColor = 'initial';
+                    }
+                }       
+              // =============silver=================================
+            //=====================================          
+                function silver(){
+                    if(document.getElementById('p1').style.backgroundColor != 'silver'){
+                        document.getElementById('p1').style.backgroundColor = 'silver'; 
                           var theme = document.getElementById('p1').style.backgroundColor; 
                             console.log(theme);
                             localStorage.setItem("theme", theme);
@@ -311,7 +390,7 @@ function opt() {
 
                  // for showing setting options
              function opened(index) {
-                console.log("i clicked" , index);
+                // console.log("i clicked" , index);
                 var id = "p" + index;
                 var index1 = document.getElementById(id) ;
                 // console.log(index1);
