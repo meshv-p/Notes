@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notes</title>
     <link rel="stylesheet" href="style.css">
-<!--     <link rel="stylesheet" href="phone.css"  media="screen and (max-width:700px)" > -->
+    <!-- <link rel="stylesheet" href="phone.css"  media="screen and (max-width:700px)" > -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,13 +23,13 @@
 
     <!-- left side -->
     <div class="notes">
-        <div class="left">your's list
+        <div class="left"> &rAarr; your's list
             <ul>
-                <li><a href="#">All </a></li>
-                <li><a href="sec.html">Favorite</a> </li>
-                <li><a href="#"> important </a> </li>
+                <li><button class="sec">All</button></li>
+                <li><button class="sec">Favorite</button></li>
+             <li><button class="sec">Important</button></li>
             </ul>
-
+            <span class="icon">&rtrif; </span>
         </div>  
 
         <!-- Right side -->
@@ -113,8 +113,13 @@
         </div>
     </div>
 
-   
-   
+  
+   <div class="timer" id="timer">
+    <input type="datetime-local" class="Date" id="Date" >
+    <button onclick="submit()" id="Set" class="set">Set Timer</button>
+    <button onclick="clear()" >Clear</button>
+   </div>
+  
 
     <div class="footer-icon">
            
