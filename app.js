@@ -86,7 +86,7 @@ function opt() {
             AddTitle.value = "";
            
             showNotes();
-            // window.location.reload();
+            window.location.reload();
         });
         // add notes show
         function showNotes() {
@@ -192,11 +192,6 @@ function opt() {
 
                  } 
                  }
-               
-                
-            
-
-
             active();
             function active() {                          
             const addText = document.querySelector('.footer input');
@@ -209,7 +204,40 @@ function opt() {
         else{
             plus.classList.remove('active');
         }
-        } }
+        } }  
+      
+        function submit(){
+        //===================for timer set =============================
+        // Set the date we're counting down to
+        var NewDate = document.getElementById('Date').value; 
+         var countDownDate = new Date(NewDate).getTime();
+         console.log(NewDate);
+         // Update the count down every 1 second
+         var x1 = setInterval(function() {
+         
+           // Get today's date and time
+           var now = new Date().getTime();
+             
+           // Find the distance between now and the count down date
+           var distance = countDownDate - now;
+             console.log(distance);
+         
+                     // If the count down is over, write some text 
+           if (distance < 0) {
+             clearInterval(x1);
+            //  alert('Time is out');
+            var audio =  new Audio('jump.ogg');
+            audio.play();
+           
+        }
+    }, 1000); }
+    
+    function clear(){
+        clearInterval(gg);
+    }
+
+
+
         //================for check =======================
             function check(){
                 if(document.getElementById('t1').style.textDecoration !='line-through'){
@@ -237,6 +265,16 @@ function opt() {
                     document.getElementById('n1').style.display ='block';
                 }
             }
+         //================for put timer =======================
+            function timer(){
+                if(document.getElementById('timer').style.display !='block'){
+                    document.getElementById('timer').style.display ='block';
+                }
+                else{
+                    document.getElementById('timer').style.display ='none';
+                }
+            }
+
         //================for share=======================
             function share(){
                 var link = "https://meshv-p.github.io/Notes";
