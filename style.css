@@ -862,4 +862,14 @@ margin-left: 1px; font-size: 14px;
     height: 83px;
     width: 57%;
     }
+    .pc{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
 }
+.mobile{
+    display: none;
+}
+
