@@ -86,7 +86,10 @@ function opt() {
             AddTitle.value = "";
            
             showNotes();
-            window.location.reload();
+            // window.location.reload();
+            let a1 = new Date();
+            let a2 = `${a1.getHours()} : ${a1.getMinutes()} : ${a1.getSeconds()}`;
+            document.getElementById('ti').innerHTML = a2;
         });
         // add notes show
         function showNotes() {
@@ -99,11 +102,12 @@ function opt() {
                 let html = "";
                     notesObj.forEach(function (element,index) {
                     html += `
-                    <div class="notesn">
+                    <div class="notesn" id="todo">
                         <div class="noten" id="noten${index}">
-                          <span   class="title"  id="checkc${index}"  > ${element.title} </span> 
+                          <span   class="title"  id="checkc${index}"> ${element.title} </span> 
                           <span  class="notesm"  id="1c${index}" role="textbox" style="display:  block;">${element.text} </span>
                           <button  class="b3" id="o${index}"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>  
+                          <span id="ti"></span>
                         </div>
                         <div class="option" id="po${index}">
                     <button class="btn che" title="If Your notes is done You can tick cross." id="c${index}" onclick="checked(this.id)"><i class="fa fa-check " ></i></button> <!-- checked -->
@@ -169,7 +173,40 @@ function opt() {
                 // console.log('fired 2');               
                  } 
                  }
+                 //==========for all notes =============
+                 function alln(){
+                    //  console.log('hii');
+                    this.active;
+                    document.getElementById('notes').style.display ='block';
+                    document.getElementById('n1').style.display ='block';
+                    document.getElementById('fnotes').style.display ='none';
+                 }
+            //=============for favorites notes==============
+               function favorite(){
+                   document.getElementById('n1').style.display ='none';
+                   
+                   document.getElementById('notes').style.display ='none';
+                   document.getElementById('fnotes').style.display ='block';
+                  
+                
+                
+               }
 
+               var fnote = {
+                   title : 'me' , name : 'patel'
+               }
+               
+               
+              
+                var fn = localStorage.setItem('fnote',fnote);
+                var s = localStorage.getItem('fnote');
+                    // document.getElementById('')
+                    // console.log(fnote);
+                //  let m = { title : 'hi123' , name : 'le'}
+                // m.push(m);
+                JSON.stringify(fnote,'title','hi123');
+                // var m = addToObject(fnote,'title', 'hi123');
+                console.log(fnote);
 
 
                   // for checked notes options
@@ -223,17 +260,24 @@ function opt() {
              console.log(distance);
          
                      // If the count down is over, write some text 
-           if (distance < 0) {
+           if (distance <= 0) {
              clearInterval(x1);
             //  alert('Time is out');
-            var audio =  new Audio('jump.ogg');
-            audio.play();
-           
+            
+            
+        var audio =  new Audio('jump.ogg');
+        audio.play();
         }
     }, 1000); }
     
-    function clear(){
-        clearInterval(gg);
+    
+      
+   
+    
+
+    function cancel(){
+        console.log('cancel');
+        clearInterval(x1);
     }
 
 
@@ -258,13 +302,11 @@ function opt() {
             }
         //================for pinned=======================
             function star(){
-                if(document.getElementById('n1').style.display !=''){
-                    document.getElementById('n1').style.display ='none';
-                }
-                else{
-                    document.getElementById('n1').style.display ='block';
-                }
-            }
+               console.log('pinned');
+              
+                
+            } 
+            
          //================for put timer =======================
             function timer(){
                 if(document.getElementById('timer').style.display !='block'){
@@ -276,14 +318,14 @@ function opt() {
             }
 
         //================for share=======================
-             function share(){
+            function share(){
                 // var link = "https://meshv-p.github.io/Notes";
                 // console.log(link);
                if(navigator.share){
                    navigator.share({
                        title : 'meshv patel', url : 'https://meshv-p.github.io/Notes'
                    }).then(()=>{
-                       console.log("thanks");
+                       alert("thanks");
                    }                                                         
                    )                                
                 }               
@@ -447,8 +489,4 @@ function opt() {
                 index1.style.display = 'none'; 
                 // console.log('fired 2');               
                  } 
-                 }
-               
-
-
-          
+                 }          
