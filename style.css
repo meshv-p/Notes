@@ -801,8 +801,19 @@ margin-left: 1px; font-size: 14px;
     left: 862px;
     height: 30px; width: 32%; display: none;
 }
-
-
+#time{
+    position: relative;
+    top: -540px;
+    left: 811px;
+}
+#ti{
+    position: relative;
+    top: -132px;
+    left: 404px;
+}
+.mobile{
+    display: none;
+}
 @media (max-width:500px) {  
     .note1{
         width: 68.6%;
@@ -856,7 +867,7 @@ margin-left: 1px; font-size: 14px;
     .timer{
         display: none;
     position: relative;
-    top: -200px;
+    top: -135px;
     left: 109px;
     border: 2px solid red;
     height: 83px;
@@ -866,10 +877,6 @@ margin-left: 1px; font-size: 14px;
         display: none;
     }
     .mobile{
-        display: block;
+        display: inline-block;
     }
 }
-.mobile{
-    display: none;
-}
-
