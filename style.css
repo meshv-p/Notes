@@ -806,9 +806,12 @@ margin-left: 1px; font-size: 14px;
     top: -540px;
     left: 811px;
 }
+#fnotes{
+    display: none;
+}
 #ti{
     position: relative;
-   top: -132px;
+    top: -132px;
     left: 283px;
 }
 .mobile{
