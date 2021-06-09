@@ -276,10 +276,17 @@ function opt() {
             }
 
         //================for share=======================
-            function share(){
-                var link = "https://meshv-p.github.io/Notes";
-                console.log(link);
-                window.location  = "https://web.whatsapp.com"; 
+             function share(){
+                // var link = "https://meshv-p.github.io/Notes";
+                // console.log(link);
+               if(navigator.share){
+                   navigator.share({
+                       title : 'meshv patel', url : 'https://meshv-p.github.io/Notes'
+                   }).then(()=>{
+                       console.log("thanks");
+                   }                                                         
+                   )                                
+                }               
             }
       
          //================for colors section======================
