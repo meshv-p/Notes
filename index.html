@@ -23,11 +23,11 @@
 
     <!-- left side -->
     <div class="notes">
-        <div class="left"> &rAarr; your's list
+        <div class="left" > &rAarr; your's list
             <ul>
-                <li><button class="sec">All</button></li>
-                <li><button class="sec">Favorite</button></li>
-             <li><button class="sec">Important</button></li>
+                <li><button class="sec"  onclick="alln()">All</button></li>
+                <li><button class="sec" id="left" onclick="favorite()">Favorite</button></li>
+                <li><button class="sec">Important</button></li>
             </ul>
             <span class="icon">&rtrif; </span>
         </div>  
@@ -46,8 +46,7 @@
                 <div class="note1" id="p1">
                     <input type="text" placeholder="Task 1" id="t1"><input type="text" id="des"
                         placeholder="Description">
-                    <button id="b1"  class="outline" title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button> 
-                   
+                    <button id="b1"  class="outline" title="setting" onclick="opt()"> <i class="fa fa-cog"></i></button>                   
                 </div>
                    <!-- option bar -->
                 <div class="option" id="opt">
@@ -56,10 +55,9 @@
                     <button class="btn pin" title="Favorite notes so You can see in favorite section." onclick="star()"><i class="fa fa-star"></i></button> <!-- pinned -->
                     <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
                     <hr id="hr21">
-<!--                      <button class="btn share mobile" title="Share notes with Your friends and families member." onclick="window.open('whatsapp://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> <!-- share -->
-<!--                     <button class="btn share pc" title="Share notes with Your friends and families member." onclick="window.open('https://web.whatsapp.com://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> <!-- share --> 
-                                        
-                    <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share --> 
+                    <!-- <button class="btn share mobile" title="Share notes with Your friends and families member." onclick="window.open('whatsapp://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> share -->
+                    <!-- <button class="btn share pc" title="Share notes with Your friends and families member." onclick="window.open('https://web.whatsapp.com://send?text=https://meshv-p.github.io/Notes')"><i class="fa fa-share"></i></button> share -->
+                    <button class="btn share" onclick="share()"><i class="fa fa-share"></i></button>
                     <hr id="hr22">
                     <div class="color">
                         <button class="btn red" title="Red" onclick="red()"></button> <!-- red -->
@@ -94,7 +92,9 @@
                     </div>  -->
            </div>
 
-               
+               <div id="fnotes" style="display: none;">
+                   meshv patel 
+               </div>
 
             
             <!-- add null notes -->
@@ -120,10 +120,10 @@
    <div class="timer" id="timer">
     <input type="datetime-local" class="Date" id="Date" >
     <button onclick="submit()" id="Set" class="set">Set Timer</button>
-    <button onclick="clear()" >Clear</button>
+    <button onclick="cancel()" >Clear</button>
    </div>
   
-
+<span  id="time"></span>
     <div class="footer-icon">
            
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" style=" fill:#000000;"><path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path></svg>  
