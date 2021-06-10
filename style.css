@@ -521,7 +521,7 @@ header {
         width: 86%;
     }
 }
-@media (max-width:500px) {
+@media (max-width:425px) {
     .notes{
         border: none;
     }
@@ -889,7 +889,7 @@ margin-left: 1px; font-size: 14px;
 .mobile{
     display: none;
 }
-@media (max-width:500px) {  
+@media (max-width:425px) {  
     .note1{
         width: 68.6%;
     }
@@ -955,7 +955,7 @@ margin-left: 1px; font-size: 14px;
         display: inline-block;
     }
     .footer-icon{
-        display: block;
+        display: block; width: 100vw;
     }
     #h2{
         left: 105px;
