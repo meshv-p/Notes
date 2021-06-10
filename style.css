@@ -304,7 +304,7 @@ header {
 
 #hr2 {
     position: relative;
-    top: -4px;
+    top: -7px;
 }
 
 /* footer side */
@@ -313,10 +313,12 @@ header {
     margin: 0px 3px;
     border-radius: 7px;
     position: absolute;
-    top: 89.6%;  /*561  590*/
+    top: 88.5%;  /*561  590*/
     width: 98% ;
     right:  0px;
     left: 0px;
+    /* border: 1px solid black; */
+    height: 64px;
 }    /*  end */
 
 /* new notes add */
@@ -327,7 +329,8 @@ header {
     border: 1px solid black;
     outline: none;
     position:relative;
-    top: 27px;
+    top: 35px;
+    /* display: inline-block; */
 }     /*  end */
 
 /*  div plus icon for new notes */
@@ -335,8 +338,8 @@ header {
     display: inline;
     height: 26px;
     width: 28px;
-    position: relative;
-    top: 0px;
+    position: absolute;
+    top: 34px;
     
 
 }    /*  end */
@@ -355,6 +358,7 @@ header {
     border: 1px solid black;
     outline: none;
     display:none;
+    margin: 0px 25px;
 }     /*  end */
 
 
@@ -553,15 +557,18 @@ header {
     }
     #addText2{
         position: relative;
-        top: -17px;
+        top: -28px;
+    }
+    .plusm{
+        top: -60px;
     }
     .op{
         width: 290px;
     }
     .plus1{
-        position: relative;
+        position: absolute;
         top: 9px;
-        left: 0px;
+        left: 320px;
     }
     #plus{
         position:initial;
@@ -648,10 +655,59 @@ header {
 
 .footer-icon{
     display:none;
-    margin-top: 100%;
-    width: 100%;
+    background-color: darksalmon;
+    width: 100%;  overflow: auto; margin-top: 33px;
+    height: 50px; border-radius: 12px;
 }
 
+#img1{
+    position: relative;
+    top: 8px;
+    left: 29px;
+    background-color: transparent;
+    border: none; cursor: pointer;
+}
+#img2{
+    position: relative;
+    top: 2px;
+    left: 133px;   background-color: transparent;
+    border: none; cursor: pointer;
+}
+#img3{
+    position: relative;
+    top: 7px;
+    left: 246px;  cursor: pointer;
+}
+.iconlast{
+    position: relative;
+    top: 24px;
+    left: -72px;
+    font-size: 14px; color: #000000b3;
+}
+#lasthr{
+    width: 9%;
+    position: relative;
+    top: -17px;
+    left: -60px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-top: none;
+}
+#lasthr2{
+    width: 9%;
+    position: relative;
+    top: -25px;
+    left: 73px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-top: none;
+}
+.lastfa{
+    left: 13px;
+}
+.lastimp{
+    left: 88px;
+}
 /* for vertical line  */
 .vl {
     border-left: 2px solid hsl(0deg 0% 3%);
@@ -738,10 +794,13 @@ margin-left: 1px; font-size: 14px;
     top: -1px;
     left: 175px; margin: 0;
 }
-img {
+/* img {
     position: relative;
     top: -44px;
     left: 418px;
+} */
+.ph{
+    color: red;
 }
 .text {
     transform: rotate(90deg);
@@ -894,5 +953,11 @@ img {
     }
     .mobile{
         display: inline-block;
+    }
+    .footer-icon{
+        display: block;
+    }
+    #h2{
+        left: 105px;
     }
 }
