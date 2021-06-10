@@ -1,4 +1,7 @@
 showNotes();
+// var n = localStorage.getItem('notes');  // notes is an array of all things.
+// var fav = localStorage.getItem('fav');
+// console.log(fav)
 
 // for search button 
   let search = document.getElementById('searchTxt');
@@ -100,7 +103,9 @@ function opt() {
                 notesObj = JSON.parse(notes);
             }
                 let html = "";
+             
                     notesObj.forEach(function (element,index) {
+                        
                     html += `
                     <div class="notesn" id="todo">
                         <div class="noten" id="noten${index}">
@@ -112,7 +117,7 @@ function opt() {
                         <div class="option" id="po${index}">
                     <button class="btn che" title="If Your notes is done You can tick cross." id="c${index}" onclick="checked(this.id)"><i class="fa fa-check " ></i></button> <!-- checked -->
                     <button class="btn remove" title="If it is done then remove Notes." onclick="deleteNote(this.id)" id="${index}" ><i class="fa fa-trash-alt" ></i></button> <!-- remove -->
-                    <button class="btn pin" title="Favorite notes so You can see in favorite section." onclick="star()"><i class="fa fa-star"></i></button> <!-- pinned -->
+                    <button class="btn pin" title="Favorite notes so You can see in favorite section."  id="${index}" onclick="star(this.id)"><i class="fa fa-star"></i></button> <!-- pinned -->
                     <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
                     <hr id="hr21">
                     <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
@@ -183,31 +188,91 @@ function opt() {
                  }
             //=============for favorites notes==============
                function favorite(){
+                var c = localStorage.getItem('indexf');
+                console.log(c);
+                    var id = c;
+                    var x = notesObj[id];  // its object 
+                    console.log(x)
+                    var name1 = x.title;
+                    var text = x.text;
+                    console.log(name1);
+                    console.log(text);
                    document.getElementById('n1').style.display ='none';
-                   
                    document.getElementById('notes').style.display ='none';
+                   document.getElementById('h2').style.display ='block';
                    document.getElementById('fnotes').style.display ='block';
+
+                //    document.getElementById('fnotes').innerHTML = id;
+                   document.getElementById('fnotes').innerHTML = ` 
+                   <h2 id="h2">Favorite Notes</h2>
+                   <div class="notesn" id="todo">
+                   <div class="noten" >
+                     <span   class="title"  > ${name1} </span> 
+                     <span  class="notesm"  role="textbox" style="display:  block;">${text} </span>
+                     <button  class="b3"  onclick="opened(this.id)" > <i class="fa fa-cog"></i></button>  
+                     <span id="ti"></span>
+                   </div>
+                   <div class="option" >
+               <button class="btn che" title="If Your notes is done You can tick cross." onclick="checked(this.id)"><i class="fa fa-check " ></i></button> <!-- checked -->
+               <button class="btn remove" title="If it is done then remove Notes." onclick="deleteNote(this.id)"  ><i class="fa fa-trash-alt" ></i></button> <!-- remove -->
+               <button class="btn pin" title="Favorite notes so You can see in favorite section."onclick="star(this.id)"><i class="fa fa-star"></i></button> <!-- pinned -->
+               <button class="btn time1"  title="Put timer so You dont forget to do that." onclick="timer()"><i  class="fa fa-clock"></i></button><!--time-->
+               <hr id="hr21">
+               <button class="btn share" title="Share notes with Your friends and families member." onclick="share()"><i class="fa fa-share"></i></button> <!-- share -->
+               <hr id="hr22">
+               <div class="color">
+                   <button class="btn red" title="Red" onclick="red()"></button> <!-- red -->
+                   <button class="btn b" title="Blue" onclick="blue()"></button> <!-- blue -->
+                   <button class="btn last g" title="Green" onclick="green()"></button><!--green  -->
+                   <button class="btn yellow" title="Yellow" onclick="yellow()"></button>
+                   <button class="btn li" title="LightGreen" onclick="lightgreen()"></button>
+                   <button class="btn last sr" title="Silver" onclick="silver()"></button>
+               </div>
+               <div class="text">Colors</div>
+               <span class="font " id="ch" >Checked</span>
+               <span class="font " id="re" >Remove</span>
+               <span class="font " id="pi" >Pinned</span>
+               <span class="font " id="ti" >Timer</span>
+               <span class="font " id="sh" >Share</span>
+           </div>
+
+               </div>`   
+                   
                   
-                
-                
+               }
+               function imp(){
+                var c = localStorage.getItem('indexf');
+                   document.getElementById('fnotes').style.display ='block';
+                   console.log(c); 
+                document.getElementById('fnotes').innerHTML = document.getElementById('me');
+
+
                }
 
+
+
+
+               
+               var fn = localStorage.setItem('fnote',fnote);
+               var s = localStorage.getItem('fnote');
                var fnote = {
-                   title : 'me' , name : 'patel'
+                   title : 'me' , name : 'patel',
+                    title1: [ 12,'me']
                }
                
-               
+               var title1= [  fnote  , 'hi'];
               
-                var fn = localStorage.setItem('fnote',fnote);
-                var s = localStorage.getItem('fnote');
-                    // document.getElementById('')
-                    // console.log(fnote);
-                //  let m = { title : 'hi123' , name : 'le'}
-                // m.push(m);
-                JSON.stringify(fnote,'title','hi123');
-                // var m = addToObject(fnote,'title', 'hi123');
-                console.log(fnote);
-
+               var t = fnote.title1 ;
+                //   console.log(t);
+                
+                  var title = fnote.title;
+                  var name = fnote.name;
+                //   console.log(name);
+               
+               
+               
+               
+                
 
                   // for checked notes options
              function checked(index) {
@@ -301,11 +366,15 @@ function opt() {
                 }
             }
         //================for pinned=======================
-            function star(){
-               console.log('pinned');
-              
+            function star(index){
+               console.log('pinned',index);
+              var fav = index;
+              localStorage.setItem('indexf',fav);
+               console.log(fav);
                 
             } 
+           
+         
             
          //================for put timer =======================
             function timer(){
