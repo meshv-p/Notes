@@ -243,7 +243,7 @@ function opt() {
                function imp(){
                 var c = localStorage.getItem('indexf');
                    document.getElementById('fnotes').style.display ='block';
-                   console.log(c); 
+//                    console.log(c); 
                 document.getElementById('fnotes').innerHTML = document.getElementById('me');
 
 
@@ -370,7 +370,7 @@ function opt() {
                console.log('pinned',index);
               var fav = index;
               localStorage.setItem('indexf',fav);
-               console.log(fav);
+//                console.log(fav);
                 
             } 
            
@@ -408,13 +408,13 @@ function opt() {
                         document.getElementById('bar').style.display = 'none';
                         document.getElementById('p1').style.backgroundColor = 'indianred'; 
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                        console.log(theme);
+//                         console.log(theme);
                         localStorage.setItem('theme',theme);
                 }
                     else{
                         document.getElementById('p1').style.backgroundColor= 'initial';
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                     }
                 }
@@ -424,13 +424,13 @@ function opt() {
                     if(document.getElementById('p1').style.backgroundColor != 'red'){
                         document.getElementById('p1').style.backgroundColor = 'red' ; 
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                     }
                     else{
                         document.getElementById('p1').style.backgroundColor= 'initial';
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                         
                     }
@@ -441,13 +441,13 @@ function opt() {
                     if(document.getElementById('p1').style.backgroundColor != 'blue'){
                         document.getElementById('p1').style.backgroundColor = 'blue' ; 
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                     }
                     else{
                         document.getElementById('p1').style.backgroundColor= 'initial';
                         var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                         
                     }
@@ -459,7 +459,7 @@ function opt() {
                         document.getElementById('p1').style.backgroundColor = 'green';
 
                           var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                     }
                     else{
@@ -472,7 +472,7 @@ function opt() {
                     if(document.getElementById('p1').style.backgroundColor != 'yellow'){
                         document.getElementById('p1').style.backgroundColor = 'yellow'; 
                           var theme = document.getElementById('p1').style.backgroundColor; 
-                            console.log(theme);
+//                             console.log(theme);
                             localStorage.setItem("theme", theme);
                     }
                     else{
@@ -519,26 +519,28 @@ function opt() {
       
               //========== show Title bar========
         function AddTitle() {
+            
+            // document.getElementById('p1').classList = 'plusm';
+            //  document.getElementById('p1').style.left='320px'
             document.getElementById('addText2').style.display = 'block';
-            document.getElementById('addText').style.top='-6px';
-            // var m = window.matchMedia("(max-width:350px)");
-            // myFunction(m) // Call listener function at run time
-            // m.addEventListener(myFunction);
-            // function myFunction() {
-            //     if(m.matches){        
-            //         document.getElementById('pl').style.top='-4px'; 
-            //         document.getElementById('pl').style.position='relative'; 
-            //     }
-            //     else{
-            //     }
-            // }   
-            document.getElementById('plus').style.top='-33px';
+            if( window.matchMedia("(max-width:500px)").matches){
+            document.getElementById('addText').style.top='-20px';
+            addText2.style.width = '79%';
+            addText2.style.margin = '0px 11px';
+            p1.style.top = '-50px';
             }
-
+            else{
+            document.getElementById('addText').style.top='6px';
+            }
+             
+          
+            }
+            //================= removing title =======================
             plus.addEventListener("click",function(){                    
                 document.getElementById('addText2').style.display = 'none';
-                document.getElementById('addText').style.top='27px';
-                pl.style.top='35px';
+                document.getElementById('addText').style.top='9px';
+                pl.style.top='9px';
+             
                 plus.classList.remove('active');
                 
             })
