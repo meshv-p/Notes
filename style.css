@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+body{
+    font-family: 'Baloo Bhaina 2', cursive;
+    min-height: 100vh;
+}
 /* main div */
 .notes {   
     /* border: 2px solid red; */
@@ -14,7 +19,7 @@
 
 .icon{
     position: relative;
-    top: -73px;
+    top: -87px;  /*-73*/
     left: -35px;
     font-size: 24px;
 }
@@ -33,6 +38,10 @@
 .left ul li {
     list-style: none;
     text-align: left;
+    height: 22px;  /*defalut : none*/
+}
+ul{
+    margin-top: 7px ;
 }
 .left :hover{
     list-style: circle;
@@ -120,7 +129,7 @@ header {
 #des {
     display: block;
     margin-left: 8px;
-    margin-top: 15px;
+    margin-top: 6px;  /*15*/
     border-radius: 7px;
     width: 90%;
     border: white;
@@ -610,7 +619,7 @@ header {
 }
 .notesm{
     display: inline-block;
-    margin: 5px;
+    margin: -4px; /*5*/
     margin-left: 16px;
     width: fit-content;
     height: fit-content;
@@ -642,9 +651,7 @@ header {
     margin-top: 100%;
     width: 100%;
 }
-body{
-    min-height: 100vh;
-}
+
 /* for vertical line  */
 .vl {
     border-left: 2px solid hsl(0deg 0% 3%);
@@ -706,8 +713,8 @@ margin-left: 1px; font-size: 14px;
 
 #hr22 {
     border-bottom: none;
-    width: 17%;
-    margin-top: 8px;
+    width: 15%;
+    margin-top: -1px;
     transform: rotate(90deg);
     margin-left: 78px;
 }
@@ -724,14 +731,24 @@ margin-left: 1px; font-size: 14px;
     margin-left: 140px;
     display: grid;
     grid-template-columns: repeat(3, 117px);
+    overflow: auto;
 }
-
+#h2{
+    position: relative;
+    top: -1px;
+    left: 175px; margin: 0;
+}
+img {
+    position: relative;
+    top: -44px;
+    left: 418px;
+}
 .text {
     transform: rotate(90deg);
     color: rosybrown;
     font-size: 14px;
     position: relative;
-    top: 138px;
+    top: 130px;
     left: 206px;
 }
 
@@ -741,33 +758,33 @@ margin-left: 1px; font-size: 14px;
 
 #ch {
     position: relative;
-    top: -132px;
+    top: -150px;  /*-132*/
     left: 40px;
    
 }
 
 #re {
     position: relative;
-    top: -132px;
+    top: -150px;
     left: 115px;
 }
 
 #pi {
     position: relative;
-    top: -132px;
+    top: -150px;
     left: 197px;
 }
 
-#ti {
+#ti{
     position: relative;
-    top: -132px;
-    left: 283px;
+    top: -150px;
+    left: 281px;
 }
 
 #sh {
     position: relative;
-    top: -76px;
-    left: -90px;
+    top: -85px;
+    left: -92px;
 }
 
 .red {
@@ -809,11 +826,7 @@ margin-left: 1px; font-size: 14px;
 #fnotes{
     display: none;
 }
-#ti{
-    position: relative;
-    top: -132px;
-    left: 283px;
-}
+
 .mobile{
     display: none;
 }
