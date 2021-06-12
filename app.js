@@ -160,7 +160,7 @@ function opt() {
                     notesElm.innerHTML = html;
                             }
                      else {
-                        notesElm.innerHTML = "Nothing to see your notes here. You haven't saved Your  notes. Just type Yuor notes and hit plus button. ";
+                        notesElm.innerHTML = "Nothing to see your notes here. You haven't saved Your  notes. Just type Your notes  and hit plus button. ";
                      }       
             }
                  // for showing color options
